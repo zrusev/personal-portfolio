@@ -54,7 +54,8 @@ main div.container {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    margin-top: 5em;
 }
 
 main div.navigation {
