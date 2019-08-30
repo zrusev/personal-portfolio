@@ -60,7 +60,7 @@ main div.navigation a {
 
 main div.navigation .fa {
     position: absolute;
-    top: -0.35em;
+    top: -0.4em;
 }
 
 main div.navigation:hover .fa {
@@ -75,7 +75,7 @@ main div.left {
     grid-column-end: 2;
     grid-row-start: 2;
     grid-row-end: 3;
-    left: 4em;
+    left: 5em;
 }
 
 main div.left strong {
@@ -83,13 +83,14 @@ main div.left strong {
     left: 1em;
     visibility: hidden;
     color: rgb(182, 182, 182);
-    font-size: 1.5em;
+    font-size: 0.5em;
     transition: all 0.1s ease-out;
 }
 
 main div.left:hover strong {
     visibility: visible;
-    transform: translateX(1.5em);
+    font-size: 2em;
+    transform: translate(1em, -0.2em);
     transition: all 0.3s ease-in;
 }
 
@@ -98,21 +99,22 @@ main div.right {
     grid-column-end: 4;
     grid-row-start: 2;
     grid-row-end: 3;
-    right: 4em;
+    right: 5em;
 }
 
 main div.right strong {
     position: relative;
-    left: 0.5em;
+    right: 0.1em;
     visibility: hidden;
     color: rgb(182, 182, 182);
-    font-size: 1.5em;
+    font-size: 0.5em;
     transition: all 0.1s ease-out;
 }
 
 main div.right:hover strong {
     visibility: visible;
-    transform: translateX(-1.5em);
+    font-size: 2em;
+    transform: translate(-1em, -0.2em);
     transition: all 0.3s ease-in;
 }
 
