@@ -1,56 +1,62 @@
-*, *:before, *:after {
-    box-sizing: inherit;
-}
+@import "../variables.css";
+@import "../typography.css";
 
-html {
-    box-sizing: border-box;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    font: 16px/1.5 Playfair Display, Helvetica, Verdana, sans-serif;
-}
-
-body, input, textarea, section, select, table, form {
-    font: inherit;
-}
-
-body {
+body {  
     background: rgb(47, 47, 47);
 }
 
 main {
     display: grid;
-    grid-template-columns: 20rem auto 20rem;
-    grid-template-rows: 15rem 25rem auto;
+    grid-template-columns: 15vw 15vw auto 15vw 15vw;
+    grid-template-rows: 20vh 60vh auto;
+}
+
+@media (max-width: 1023px) {
+    main {
+        grid-template-areas:
+            "navigation . . menu menu"
+            ". main main main ."; 
+    }
+
+    main div.navigation-left {
+        visibility: hidden;
+    }
+
+    main div.navigation-right {
+        visibility: hidden;
+    }
+    
+    .media {
+        width: 70vw;
+    }
+}
+
+@media (min-width: 1024px) {
+    main {
+        grid-template-areas: 
+            "navigation . . menu menu" 
+            "navigation-left main main main navigation-right";
+    }
+
+    .media {
+        width: 25vw;
+    }
+}
+
+main nav {
+    grid-area: navigation;
 }
 
 main div.hamburger {
-    grid-column-start: 3;
-    grid-column-end: 4;    
-    grid-row-start: 1;
-    grid-row-end: 2;
+    grid-area: menu;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
 }
 
-main div.hamburger button {
-    position: fixed;
-    content: '';
-    top: 10%;
-}
-
 main div.container {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 3;
+    grid-area: main;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -87,15 +93,12 @@ main div.navigation:hover .fa {
     cursor: pointer;
 }
 
-main div.left {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 3;
+main div.navigation-left {
+    grid-area: navigation-left;
     left: 5em;
 }
 
-main div.left strong {
+main div.navigation-left strong {
     position: relative;
     left: 1em;
     visibility: hidden;
@@ -104,22 +107,19 @@ main div.left strong {
     transition: all 0.1s ease-out;
 }
 
-main div.left:hover strong {
+main div.navigation-left:hover strong {
     visibility: visible;
-    font-size: 2em;
-    transform: translate(1em, -0.2em);
+    font-size: 1.5em;
+    transform: translate(0.8em, -0.2em);
     transition: all 0.3s ease-in;
 }
 
-main div.right {
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 2;
-    grid-row-end: 3;
+main div.navigation-right {
+    grid-area: navigation-right;
     right: 5em;
 }
 
-main div.right strong {
+main div.navigation-right strong {
     position: relative;
     right: 0.1em;
     visibility: hidden;
@@ -128,16 +128,15 @@ main div.right strong {
     transition: all 0.1s ease-out;
 }
 
-main div.right:hover strong {
+main div.navigation-right:hover strong {
     visibility: visible;
-    font-size: 2em;
-    transform: translate(-1em, -0.2em);
+    font-size: 1.5em;
+    transform: translate(-0.8em, -0.2em);
     transition: all 0.3s ease-in;
 }
 
 .media {
     background: #666;
-    width: 25vw;
     position: relative;
     margin: 1rem auto;
     overflow: hidden;

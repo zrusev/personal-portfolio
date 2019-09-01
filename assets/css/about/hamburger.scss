@@ -6,7 +6,7 @@ $toggle-line-angle: 405deg;
 $toggle-anim-speed: 0.9s;
 
 .btn-toggle {
-  position: relative;
+  position: fixed;
   display: flex;
   flex-direction: column;
   cursor: pointer;

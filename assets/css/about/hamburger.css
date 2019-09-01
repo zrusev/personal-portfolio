@@ -1,5 +1,5 @@
 .btn-toggle {
-    position: relative;
+    position: fixed;
     display: flex;
     flex-direction: column;
     cursor: pointer;
