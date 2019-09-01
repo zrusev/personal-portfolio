@@ -23,12 +23,12 @@
     width: 100vw;
     margin: -5em 0 0 -3em;
     padding: 10em 5em 5em 5em;
-    background: rgb(110, 110, 110);
+    background: rgb(47, 47, 47);
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
     transform-origin: 0% 0%;
     transform: translate(0, -100%);
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    transition: transform 1s cubic-bezier(0.77, 0.2, 0.05, 1.0);
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -48,4 +48,20 @@
 
 #menuToggle input:checked~ul {
     transform: none;
+}
+
+#menu li:nth-child(1) {
+    transition-delay: 0.2s;
+}
+
+#menu li:nth-child(2) {
+    transition-delay: 0.4s;
+}
+
+#menu li:nth-child(3) {
+    transition-delay: 0.6s;
+}
+
+#menu li:nth-child(4) {
+    transition-delay: 0.8s;
 }
