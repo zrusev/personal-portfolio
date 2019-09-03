@@ -90,6 +90,13 @@ main div.navigation-left {
     grid-area: navigation-left;
     left: 5em;
 }
+/* 
+main div.navigation-left:before {
+    display: block;
+    content: '';
+    width: 10em;
+    height: 10em;
+} */
 
 main div.navigation-left strong {
     position: absolute;
@@ -140,18 +147,16 @@ main div.container div.text {
 }
 
 main div.container div.text:hover {
-    font-size: 1.4em;
-    transform: translateY(-1em);
+    transform: translateY(-0.3em);
     animation: text-border 3s forwards;
-    transition: font-size 1s ease-out,
-        transform 0.5s ease; 
+    transition: transform 0.5s ease; 
 }
 
-main div.container div.text h4 {
+main div.container div.text h3 {
     color: rgb(182, 182, 182);
 }
 
-main div.container div.text:hover h4 strong {    
+main div.container div.text:hover h3 strong {    
     transition: color 0.3s ease-in; 
     color: orangered;
 }

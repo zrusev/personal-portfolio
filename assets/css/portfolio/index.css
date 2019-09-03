@@ -139,10 +139,8 @@ main div.navigation-right:hover strong {
 .media {
     background: #666;
     position: relative;
-    margin: 1rem auto;
+    margin: 1rem;
     overflow: hidden;
-    border-radius: 0.5em;
-    border: 1px solid #fff;
     box-shadow: 0 0 1rem 0 rgb(0, 0, 0, 0.2);
 }
 
