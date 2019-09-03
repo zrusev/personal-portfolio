@@ -1,0 +1,131 @@
+@import "../variables.css";
+@import "../typography.css";
+@import "../about/navigation.css";
+
+body {  
+    background: rgb(47, 47, 47);
+}
+
+.section-timeline {
+    padding: 2em 2em 0 2em;
+}
+
+.section-timeline header {
+    border-bottom: 2px solid #000; 
+    padding: 1em;
+    margin-left: -1em;
+    border-radius: 0.3em;
+    display: inline-block;
+    color: orangered;
+}
+
+ol.timeline {
+    border-left: 2px solid #000;
+    padding: 2em 0; 
+}
+
+ol.timeline li {
+    display: block;
+    list-style: none outside;
+    padding-left: 2em;
+    position: relative;
+}
+
+ol.timeline li:before {
+    display: block;
+    content: '';
+    width: 1em;
+    height: 1em;
+    background: green;
+    border: 2px solid #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: calc( (1em + 4px) / 2 * -1 );
+}
+
+ol.timeline li:nth-child(6) span {
+    color: rgb(50, 50, 50);
+}
+
+ol.timeline li:nth-child(6):before {
+    background: rgb(50, 50, 50);
+}
+
+span.content:nth-child(5) {
+    color: rgb(75, 75, 75);
+}
+
+ol.timeline li:nth-child(5):before {
+    background: rgb(75, 75, 75);
+}
+
+span.content:nth-child(4) {
+    color: rgb(100, 100, 100);
+}
+
+ol.timeline li:nth-child(4):before {
+    background: rgb(100, 100, 100);
+}
+
+span.content:nth-child(3) {
+    color: rgb(125, 125, 125);
+}
+
+ol.timeline li:nth-child(3):before {
+    background: rgb(125, 125, 125);
+}
+
+span.content:nth-child(2) {
+    color: (150, 150, 150);
+}
+
+ol.timeline li:nth-child(2):before {
+    background: rgb(150, 150, 150);
+}
+
+ol.timeline span.content:nth-child(1) {
+    color: rgb(175, 175, 175);
+}
+
+ol.timeline li:nth-child(1):before {
+    background: rgb(175, 175, 175);
+}
+
+ol.timeline li strong.title {
+    display: block;
+    margin-bottom: 0.3em;
+    color: rgb(182, 182, 182);
+}
+
+ol.timeline li:not(:first-child) {
+    margin-top: 2em;
+}
+
+@media (min-width: 1024px) {
+
+    .section-timeline header {
+        display: block;
+        max-width: 40%;
+        margin: 0 auto;
+        text-align: center;
+        color: orangered;
+    }
+
+    ol.timeline {
+        margin-left: 50%;
+    }
+
+    ol.timeline li:nth-child(even) {
+        width: 100%;
+        margin-left: -100%;
+        padding: 0 2em 0 0;
+        text-align: right;
+        margin-top: -2em;
+    }
+
+    ol.timeline li:nth-child(even):before {
+        left: initial;
+        right: calc( (1em + 4px) / 2 * -1 );
+    }
+}
