@@ -1,5 +1,6 @@
 @import "../variables.css";
 @import "../typography.css";
+@import "../about/navigation.css";
 
 body {  
     background: rgb(47, 47, 47);
@@ -91,7 +92,8 @@ main div.navigation-left {
 }
 
 main div.navigation-left strong {
-    position: relative;
+    position: absolute;
+    top: 0.5em;
     left: 1em;
     visibility: hidden;
     color: rgb(182, 182, 182);
@@ -101,8 +103,8 @@ main div.navigation-left strong {
 
 main div.navigation-left:hover strong {
     visibility: visible;
-    font-size: 1.5em;
-    transform: translate(0.8em, -0.2em);
+    font-size: 1.2em;
+    transform: translate(1em, -0.1em);
     transition: all 0.3s ease-in;
 }
 
@@ -112,8 +114,9 @@ main div.navigation-right {
 }
 
 main div.navigation-right strong {
-    position: relative;
-    right: 0.1em;
+    position: absolute;
+    top: 0.5em;
+    right: 0em;
     visibility: hidden;
     color: rgb(182, 182, 182);
     font-size: 0.5em;
@@ -122,7 +125,7 @@ main div.navigation-right strong {
 
 main div.navigation-right:hover strong {
     visibility: visible;
-    font-size: 1.5em;
+    font-size: 1.2em;
     transform: translate(-0.8em, -0.2em);
     transition: all 0.3s ease-in;
 }
@@ -133,7 +136,7 @@ main div.container div.text {
     text-align: end;
     text-justify: inter-word;
     position: relative;
-    animation: text-animation 1s forwards;
+    /* animation: text-animation 1s forwards; */
 }
 
 main div.container div.text:hover {
