@@ -18,11 +18,11 @@
 }
 
 #menu {
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
+    position: fixed;
+    height: 100%;
+    width: 100%;
     margin: -3em 0 0 -3em;
-    padding: 10em 5em 5em 5em;
+    padding: 1em;
     background: rgb(47, 47, 47);
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
