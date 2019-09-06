@@ -10,6 +10,10 @@ body {
     padding: 2em 2em 0 2em;
 }
 
+.section-timeline:hover div.details {
+    max-height: 50em;
+}
+
 .section-timeline header {
     border-bottom: 2px solid #000; 
     padding: 1em;
@@ -41,6 +45,12 @@ ol.timeline li:before {
     position: absolute;
     top: 0;
     left: calc( (1em + 4px) / 2 * -1 );
+}
+
+ol.timeline div.details {
+    transition: max-height 1s;
+    overflow: hidden;
+    max-height: 0;
 }
 
 ol.timeline li:nth-child(6) span,
