@@ -161,12 +161,18 @@ main div.navigation-right:hover strong {
 .media:after {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+    opacity: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
     transition: opacity 0.2s ease-in; 
 }
 
 .media:hover:after {
-    opacity: 0;
+    opacity: 1;
+}
+
+.media:hover div.tags {
+    opacity: 1;
+    transition-delay: 0.5s;
 }
 
 .media img {
@@ -174,6 +180,43 @@ main div.navigation-right:hover strong {
     position: absolute;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.media div.tags {
+    display: flex;
+    flex-flow: row wrap;
+    position: absolute;
+    left: 1em;
+    top: 1em;
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+}
+
+.media div.tags span {
+    margin: 0.5em;
+    background: red;
+    color: #fff;
+    min-width: 4.5em;
+    z-index: 1;
+    text-align: center;
+    transform: translateX(-3em);
+    transition: transform 0.2s ease-out;
+}
+
+.media div.tags span:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.media div.tags span:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.media div.tags span:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.media div.tags span:nth-child(4) {
+    transition-delay: 0.4s;
 }
 
 .media.ar-9x16 img {
