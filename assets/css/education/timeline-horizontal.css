@@ -4,31 +4,44 @@
 
 body {  
     background: rgb(47, 47, 47);
+    overflow: hidden;
+    height: 100vh;
 }
 
 .section-timeline {
-    padding: 2em 2em 0 2em;
+    margin: 2em;
+    padding: 8em 2em 0 2em;
+    overflow-x: auto;
+    position: relative;
 }
 
 .section-timeline header {
-    border-bottom: 2px solid #000; 
+    position: absolute;
+    top: 0;
+    left: 0;
     padding: 1em;
-    margin-left: -1em;
     border-radius: 0.3em;
-    display: inline-block;
+    max-width: 40%;
+    text-align: center;
     color: orangered;
 }
 
 ol.timeline {
-    border-left: 2px solid #000;
-    padding: 2em 0; 
+    display: flex;
+    padding-bottom: 2em; 
 }
 
 ol.timeline li {
+    flex: 0 0 20em;
     display: block;
     list-style: none outside;
-    padding-left: 2em;
+    padding: 2em 2em 0 0;
     position: relative;
+    border-top: 2px solid #000;
+}
+
+ol.timeline li:last-child {
+    border-color: transparent;
 }
 
 ol.timeline li:before {
@@ -39,8 +52,8 @@ ol.timeline li:before {
     border: 2px solid #000;
     border-radius: 50%;
     position: absolute;
-    top: 0;
-    left: calc( (1em + 4px) / 2 * -1 );
+    top: calc( (1em + 4px) / 2 * -1 );
+    left: 0;
 }
 
 ol.timeline li:nth-child(6) span,
@@ -100,36 +113,4 @@ ol.timeline li:nth-child(1):before {
 ol.timeline li strong.title {
     display: block;
     margin-bottom: 0.3em;
-}
-
-ol.timeline li:not(:first-child) {
-    margin-top: 2em;
-}
-
-@media (min-width: 1024px) {
-
-    .section-timeline header {
-        display: block;
-        max-width: 40%;
-        margin: 0 auto;
-        text-align: center;
-        color: orangered;
-    }
-
-    ol.timeline {
-        margin-left: 50%;
-    }
-
-    ol.timeline li:nth-child(even) {
-        width: 100%;
-        margin-left: -100%;
-        padding: 0 2em 0 0;
-        text-align: right;
-        margin-top: -2em;
-    }
-
-    ol.timeline li:nth-child(even):before {
-        left: initial;
-        right: calc( (1em + 4px) / 2 * -1 );
-    }
 }
