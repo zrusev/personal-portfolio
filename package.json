@@ -45,5 +45,9 @@
     "webpack-bundle-analyzer": "^3.4.1",
     "webpack-cli": "^3.3.8",
     "webpack-dev-server": "^3.8.0"
+  },
+  "dependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
   }
 }

@@ -107,12 +107,12 @@ const devStylesConfig = [
 
 const defaultStylesPlugins = [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, 'src/views/about/index.html'),
-        filename: 'index.html',
-        title: 'Home',
-        chunks: ['index']
-    }),
+    // new HtmlWebpackPlugin({
+    //     template: path.resolve(__dirname, 'src/views/about/index.html'),
+    //     filename: 'index.html',
+    //     title: 'Home',
+    //     chunks: ['index']
+    // }),
     // new BundleAnalyzerPlugin(),
 ];
 
@@ -145,12 +145,12 @@ module.exports = (env) => {
             ? 'source-map'
             : 'cheap-eval-source-map',
         resolve: {
-            extensions: ['.js'],
+            extensions: ['.js', '.jsx'],
             alias: {
             }
         },
         entry: {
-            index: path.resolve(__dirname, 'src/scripts/views/index'),
+            index: path.resolve(__dirname, 'src/index'),
         },
         output: {
             filename: 'scripts/[name].min.js',
@@ -164,7 +164,7 @@ module.exports = (env) => {
         module: {
             rules: [
                 {
-                    test: /\.(m?js)$/,
+                    test: /\.(m?js|jsx)$/,
                     exclude: /node_modules/,
                     use: [
                         {

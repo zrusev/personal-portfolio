@@ -15,6 +15,12 @@ module.exports = {
                     "proposals": false,
                 },
             }
+        ],
+        [
+            "@babel/preset-react",
+            {
+            "useBuiltIns": true,
+            },
         ]
     ],
 }
