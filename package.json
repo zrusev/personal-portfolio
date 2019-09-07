@@ -1,0 +1,23 @@
+{
+  "name": "personal-portfolio",
+  "version": "1.0.0",
+  "description": "Personal Portfolio Page",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zrusev/personal-portfolio.git"
+  },
+  "keywords": [],
+  "author": "zlatko.rusev@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zrusev/personal-portfolio/issues"
+  },
+  "homepage": "https://github.com/zrusev/personal-portfolio#readme",
+  "devDependencies": {
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.8",
+    "webpack-dev-server": "^3.8.0"
+  }
+}
