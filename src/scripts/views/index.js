@@ -1,3 +1,3 @@
 const counter = require('./counter');
 
-counter();
+console.log(counter());
