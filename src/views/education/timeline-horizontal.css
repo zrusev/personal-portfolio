@@ -1,9 +1,4 @@
-@import "../variables.css";
-@import "../typography.css";
-@import "../about/navigation.css";
-
 body {  
-    background: rgb(47, 47, 47);
     overflow: hidden;
     height: 100vh;
 }

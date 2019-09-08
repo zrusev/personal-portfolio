@@ -1,6 +1,5 @@
-@import "../variables.css";
-@import "../typography.css";
-@import "../about/navigation.css";
+@import "./variables.css";
+@import "./typography.css";
 
 body {  
     background: rgb(47, 47, 47);
@@ -135,40 +134,4 @@ main div.navigation-right:hover strong {
     font-size: 1.2em;
     transform: translate(-0.8em, -0.2em);
     transition: all 0.3s ease-in;
-}
-
-main div.container div.text {
-    color: rgb(110, 110, 110);
-    padding: 3em;
-    text-align: end;
-    text-justify: inter-word;
-    position: relative;
-    /* animation: text-animation 1s forwards; */
-}
-
-main div.container div.text:hover {
-    transform: translateY(-0.3em);
-    animation: text-border 3s forwards;
-    transition: transform 0.5s ease; 
-}
-
-main div.container div.text h3 {
-    color: rgb(182, 182, 182);
-}
-
-main div.container div.text:hover h3 strong {    
-    transition: color 0.3s ease-in; 
-    color: orangered;
-}
-
-@keyframes text-animation {
-    0%   { top: -50em; }
-    50%  { top: 10em; }
-    100% { top: 0; }
-}
-
-@keyframes text-border {
-    20% {
-       box-shadow: 0.5em 1.5em 3em orangered;
-    }
 }

@@ -1,11 +1,3 @@
-@import "../variables.css";
-@import "../typography.css";
-@import "../about/navigation.css";
-
-body {  
-    background: rgb(47, 47, 47);
-}
-
 main {
     display: grid;
     grid-template-columns: 15vw 15vw auto 15vw 15vw;
