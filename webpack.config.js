@@ -107,12 +107,12 @@ const devStylesConfig = [
 
 const defaultStylesPlugins = [
     new CleanWebpackPlugin(),
-    // new HtmlWebpackPlugin({
-    //     template: path.resolve(__dirname, 'src/views/about/index.html'),
-    //     filename: 'index.html',
-    //     title: 'Home',
-    //     chunks: ['index']
-    // }),
+    new HtmlWebpackPlugin({
+        template: path.resolve(__dirname, 'public/index.html'),
+        filename: 'index.html',
+        title: 'Home',
+        chunks: ['index']
+    }),
     // new BundleAnalyzerPlugin(),
 ];
 
@@ -179,7 +179,7 @@ module.exports = (env) => {
                         : devStylesConfig,
                 },
                 {
-                    test: /\.(png|jpe?g|gif)$/i,
+                    test: /\.(png|jpe?g|gif|ico)$/i,
                     use: [
                       {
                         loader: 'file-loader',

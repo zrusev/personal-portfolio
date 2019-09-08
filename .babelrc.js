@@ -19,7 +19,7 @@ module.exports = {
         [
             "@babel/preset-react",
             {
-            "useBuiltIns": true,
+                "useBuiltIns": true,
             },
         ]
     ],
