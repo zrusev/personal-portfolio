@@ -1,9 +1,7 @@
-body {  
-    overflow: hidden;
-    height: 100vh;
-}
+@import url("education-media.css");
 
 .section-timeline {
+    overflow: hidden;
     margin: 2em;
     padding: 8em 2em 0 2em;
     overflow-x: auto;

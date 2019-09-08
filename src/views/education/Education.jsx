@@ -1,5 +1,5 @@
 import React from 'react';
-import './timeline-horizontal.css';
+import './education.css';
 
 export default () => {
     return (

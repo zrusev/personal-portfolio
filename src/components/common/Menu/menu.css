@@ -1,3 +1,7 @@
+nav {
+    grid-area: navigation;
+}
+
 #menuToggle {
     display: block;
     position: relative;

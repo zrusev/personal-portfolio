@@ -1,5 +1,5 @@
 import React from 'react';
-import './timeline-vertical.css';
+import './timeline.css';
 
 export default () => {
     return (

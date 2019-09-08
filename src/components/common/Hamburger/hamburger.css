@@ -1,3 +1,11 @@
+div.hamburger {
+    grid-area: menu;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
 .btn-toggle {
     position: fixed;
     display: flex;

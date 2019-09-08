@@ -1,3 +1,63 @@
+div.navigation {
+    position: fixed;
+    content: '';
+    top: 50%;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    color: rgb(182, 182, 182);
+}
+
+div.navigation a {
+    color: inherit;
+    text-decoration: none;
+}
+
+div.navigation .fa {
+    position: absolute;
+    top: -0.4em;
+}
+
+div.navigation:hover .fa {
+    color: orangered;
+    font-size: 8em;
+    transition: font-size 0.3s ease-out;
+    cursor: pointer;
+}
+
+div.navigation-left {
+    grid-area: navigation-left;
+    left: 5em;
+}
+
+/* 
+div.navigation-left:before {
+    display: block;
+    content: '';
+    width: 10em;
+    height: 10em;
+} */
+
+div.navigation-left strong {
+    position: absolute;
+    top: 0.5em;
+    left: 1em;
+    visibility: hidden;
+    color: rgb(182, 182, 182);
+    font-size: 0.5em;
+    transition: all 0.1s ease-out;
+}
+
+div.navigation-left:hover strong {
+    visibility: visible;
+    font-size: 1.2em;
+    transform: translate(1em, -0.1em);
+    transition: all 0.3s ease-in;
+}
+
 em {
     display: block;
     position: absolute;
