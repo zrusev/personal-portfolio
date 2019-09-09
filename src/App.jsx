@@ -6,8 +6,8 @@ import NavigationLeft from './components/common/Navigation-left/Navigation-left'
 import NavigationRight from './components/common/Navigation-right/Navigation-right';
 // import AboutPage from './views/about/About';
 // import EducationPage from './views/education/Education';
-import PortfolioPage from './views/portfolio/Portfolio';
-// import TimelinePage from './views/timeline/Timeline';
+// import PortfolioPage from './views/portfolio/Portfolio';
+import ExperiencePage from './views/experience/Experience';
 
 export default () => {
   return (
@@ -16,7 +16,7 @@ export default () => {
       <Hamburger />
       <NavigationLeft />
       <div className="container">
-          <PortfolioPage />
+          <ExperiencePage />
       </div>
       <NavigationRight />
     </main>

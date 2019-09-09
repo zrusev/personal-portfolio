@@ -1,5 +1,5 @@
 import React from 'react';
-import './timeline.css';
+import './experience.css';
 
 export default () => {
     return (
