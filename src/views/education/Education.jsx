@@ -3,11 +3,11 @@ import './education.css';
 
 export default () => {
     return (
-        <section className="section section-timeline">
+        <section className="section section-education">
             <header>
                 <h3>Academic background</h3>
             </header>
-            <ol className="timeline">
+            <ol className="education">
                 <li>
                     <strong className="title">Mar 2019</strong>
                         <span className="content">

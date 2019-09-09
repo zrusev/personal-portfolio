@@ -1,6 +1,4 @@
-@import url("education-media.css");
-
-.section-timeline {
+.section-education {
     overflow: hidden;
     margin: 2em;
     padding: 8em 2em 0 2em;
@@ -8,7 +6,7 @@
     position: relative;
 }
 
-.section-timeline header {
+.section-education header {
     position: absolute;
     top: 0;
     left: 0;
@@ -20,12 +18,12 @@
     color: orangered;
 }
 
-ol.timeline {
+ol.education {
     display: flex;
     padding-bottom: 2em; 
 }
 
-ol.timeline li {
+ol.education li {
     flex: 0 0 20em;
     display: block;
     list-style: none outside;
@@ -36,11 +34,11 @@ ol.timeline li {
     transition: opacity 0.4s ease-out, transform 0.4s ease-in; */
 }
 
-ol.timeline li:last-child {
+ol.education li:last-child {
     border-color: transparent;
 }
 
-ol.timeline li:before {
+ol.education li:before {
     display: block;
     content: '';
     width: 1em;
@@ -52,91 +50,91 @@ ol.timeline li:before {
     left: 0;
 }
 
-ol.timeline li:nth-child(6) span,
-ol.timeline li:nth-child(6) strong.title {
+ol.education li:nth-child(6) span,
+ol.education li:nth-child(6) strong.title {
     color: rgb(75, 75, 75);
 }
 
-ol.timeline li:nth-child(6):before {
+ol.education li:nth-child(6):before {
     background: rgb(75, 75, 75);
 }
 
-ol.timeline li:nth-child(5) span,
-ol.timeline li:nth-child(5) strong.title {
+ol.education li:nth-child(5) span,
+ol.education li:nth-child(5) strong.title {
     color: rgb(100, 100, 100);
 }
 
-ol.timeline li:nth-child(5):before {
+ol.education li:nth-child(5):before {
     background: rgb(100, 100, 100);
 }
 
-ol.timeline li:nth-child(4) span,
-ol.timeline li:nth-child(4) strong.title {
+ol.education li:nth-child(4) span,
+ol.education li:nth-child(4) strong.title {
     color: rgb(125, 125, 125);
 }
 
-ol.timeline li:nth-child(4):before {
+ol.education li:nth-child(4):before {
     background: rgb(125, 125, 125);
 }
 
-ol.timeline li:nth-child(3) span,
-ol.timeline li:nth-child(3) strong.title {
+ol.education li:nth-child(3) span,
+ol.education li:nth-child(3) strong.title {
     color: rgb(150, 150, 150);
 }
 
-ol.timeline li:nth-child(3):before {
+ol.education li:nth-child(3):before {
     background: rgb(150, 150, 150);
 }
 
-ol.timeline li:nth-child(2) span,
-ol.timeline li:nth-child(2) strong.title {
+ol.education li:nth-child(2) span,
+ol.education li:nth-child(2) strong.title {
     color: rgb(175, 175, 175);
 }
 
-ol.timeline li:nth-child(2):before {
+ol.education li:nth-child(2):before {
     background: rgb(175, 175, 175);
 }
 
-ol.timeline li:nth-child(1) span,
-ol.timeline li:nth-child(1) strong.title {
+ol.education li:nth-child(1) span,
+ol.education li:nth-child(1) strong.title {
     color: rgb(225, 225, 225);
 }
 
-ol.timeline li:nth-child(1):before {
+ol.education li:nth-child(1):before {
     background: rgb(225, 225, 225);
 }
 
-ol.timeline li strong.title {
+ol.education li strong.title {
     display: block;
     margin-bottom: 0.3em;
 }
 
-ol.timeline li:nth-child(1) {
+ol.education li:nth-child(1) {
     transition-delay: 0.1s;
 }
 
-ol.timeline li:nth-child(2) {
+ol.education li:nth-child(2) {
     transition-delay: 0.1s;
 }
 
-ol.timeline li:nth-child(3) {
+ol.education li:nth-child(3) {
     transition-delay: 0.1s;
 }
 
-ol.timeline li:nth-child(4) {
+ol.education li:nth-child(4) {
     transition-delay: 0.1s;
 }
 
-ol.timeline li:nth-child(5) {
+ol.education li:nth-child(5) {
     transition-delay: 0.1s;
 }
 
-ol.timeline li:nth-child(6) {
+ol.education li:nth-child(6) {
     transition-delay: 0.1s;
 }
 
 /* onload */
-/* ol.timeline li .load {
+/* ol.education li .load {
     opacity: 1;
     transform: translateY(-2em);
     animation: fadein 2s;

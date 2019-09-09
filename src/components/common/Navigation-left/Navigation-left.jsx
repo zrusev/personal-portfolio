@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './navigation.css';
 
 export default () => {
     return (
         <div className="navigation navigation-left">
-            <a href="http:#">
+            <Link to="/experience">
                 <span>about</span>
                 <em></em>
-            </a> 
+            </Link> 
         </div>
     )
 }

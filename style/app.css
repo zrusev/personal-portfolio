@@ -18,3 +18,5 @@ main div.container {
     justify-content: center;
     align-items: center;
 }
+
+@import "./app-media.css";
