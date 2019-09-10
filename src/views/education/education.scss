@@ -1,0 +1,92 @@
+.section-education {
+    overflow: hidden;
+    margin: 2em;
+    padding: 8em 2em 0 2em;
+    overflow-x: auto;
+    position: relative;
+    
+    header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 1em;
+        margin-left: 3em;
+        border-radius: 0.3em;
+        max-width: 50%;
+        text-align: center;
+        color: orangered;
+    }
+}
+
+ol.education {
+    display: flex;
+    padding-bottom: 2em; 
+    
+    li {
+        flex: 0 0 20em;
+        display: block;
+        list-style: none outside;
+        padding: 2em 2em 0 0;
+        position: relative;
+        border-top: 2px solid #000;
+        /* opacity: 0;
+        transition: opacity 0.4s ease-out, transform 0.4s ease-in; */
+
+        @for $i from 1 through 6 {
+            &:nth-child(#{$i}) {
+                transition-delay: 0.1s;
+            }
+        }
+
+        $list: rgb(75, 75, 75),
+               rgb(100, 100, 100), 
+               rgb(125, 125, 125), 
+               rgb(150, 150, 150), 
+               rgb(175, 175, 175), 
+               rgb(225, 225, 225);
+
+        @for $i from length($list)*-1 through -1 {
+            &:nth-child(#{abs($i)}) span,
+            &:nth-child(#{abs($i)}) strong.title {
+                color: nth($list, $i);
+            }
+
+            &:nth-child(#{abs($i)}):before {
+                background: nth($list, $i);
+            }
+        }
+        
+        &:last-child {
+            border-color: transparent;
+        }
+        
+        &:before {
+            display: block;
+            content: '';
+            width: 1em;
+            height: 1em;
+            border: 2px solid #000;
+            border-radius: 50%;
+            position: absolute;
+            top: calc( (1em + 4px) / 2 * -1 );
+            left: 0;
+        }
+        
+        strong.title {
+            display: block;
+            margin-bottom: 0.3em;
+        }
+    }
+}
+
+/* onload */
+/* ol.education li .load {
+    opacity: 1;
+    transform: translateY(-2em);
+    animation: fadein 2s;
+} */
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}

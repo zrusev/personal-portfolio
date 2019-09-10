@@ -1,0 +1,38 @@
+main div.container div.text-container {
+    color: rgb(110, 110, 110);
+    padding: 3em;
+    text-align: right;
+    position: relative;
+    
+    &.animate {
+        animation: text-container-animation 1s forwards;    
+    }
+    
+    &:hover {
+        transform: translateY(-0.3em);
+        animation: text-container-border 3s forwards;
+        transition: transform 0.5s ease; 
+    }
+    
+    h3 {
+        color: rgb(182, 182, 182);
+    }
+    
+    &:hover h3 strong {    
+        transition: color 0.3s ease-in; 
+        color: orangered;
+    }
+}
+
+
+@keyframes text-container-animation {
+    0%   { top: -50em; }
+    50%  { top: 5em; }
+    100% { top: 0; }
+}
+
+@keyframes text-container-border {
+    20% {
+       box-shadow: 0.5em 1.5em 3em orangered;
+    }
+}

@@ -9,45 +9,45 @@ div.navigation {
     justify-content: center;
     align-items: center;
     color: rgb(182, 182, 182);
-}
 
-div.navigation a {
-    color: inherit;
-    text-decoration: none;
-}
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
 
-div.navigation .fa {
-    position: absolute;
-    top: -0.4em;
-}
+    .fa {
+        position: absolute;
+        top: -0.4em;
+    }
 
-div.navigation:hover .fa {
-    color: orangered;
-    font-size: 8em;
-    transition: font-size 0.3s ease-out;
-    cursor: pointer;
+    &:hover .fa {
+        color: orangered;
+        font-size: 8em;
+        transition: font-size 0.3s ease-out;
+        cursor: pointer;
+    }
 }
 
 div.navigation-right {
     grid-area: navigation-right;
     right: 5em;
-}
+    
+    strong {
+        position: absolute;
+        top: 0.5em;
+        right: 0em;
+        visibility: hidden;
+        color: rgb(182, 182, 182);
+        font-size: 0.5em;
+        transition: all 0.1s ease-out;
+    }
 
-div.navigation-right strong {
-    position: absolute;
-    top: 0.5em;
-    right: 0em;
-    visibility: hidden;
-    color: rgb(182, 182, 182);
-    font-size: 0.5em;
-    transition: all 0.1s ease-out;
-}
-
-div.navigation-right:hover strong {
-    visibility: visible;
-    font-size: 1.2em;
-    transform: translate(-0.8em, -0.2em);
-    transition: all 0.3s ease-in;
+    &:hover strong {
+        visibility: visible;
+        font-size: 1.2em;
+        transform: translate(-0.8em, -0.2em);
+        transition: all 0.3s ease-in;
+    }
 }
 
 em {

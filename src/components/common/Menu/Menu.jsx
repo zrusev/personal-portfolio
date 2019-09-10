@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { MenuConsumer } from '../../contexts/MenuContext';
-import './menu.css';
+import './menu.scss';
 
 class MenuComponent extends Component {
     constructor(props) {

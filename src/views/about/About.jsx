@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import NavigationLeft from '../../components/common/Navigation-left/Navigation-left';
 import NavigationRight from '../../components/common/Navigation-right/Navigation-right';
-import './about.css';
+import './about.scss';
 
 class AboutPage extends Component {
     constructor(props) {

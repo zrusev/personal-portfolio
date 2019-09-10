@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import NavigationLeft from '../../components/common/Navigation-left/Navigation-left';
 import NavigationRight from '../../components/common/Navigation-right/Navigation-right';
-import './education.css';
+import './education.scss';
 
 export default () => {
     return (
