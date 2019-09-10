@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { MenuConsumer } from '../../contexts/MenuContext';
 import { CSSTransition } from 'react-transition-group';
-import './hamburger.css';
+import './hamburger.scss';
 
 function HamburgerComponent(props) {
     const [showMenu, setshowMenu] = useState(props.isClosed);
@@ -19,7 +19,6 @@ function HamburgerComponent(props) {
                 in={showMenu}
                 timeout={100}
                 classNames={'animate'}
-                appear
             >
                 <button id="menu-toggle"
                         className='btn-toggle'

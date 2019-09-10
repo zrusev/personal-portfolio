@@ -1,15 +1,24 @@
 $toggle-size: 60px;
 $toggle-line-color: rgb(182, 182, 182);
 $toggle-line-focus-color: orangered;
-$toggle-line-size: 3.5px;
+$toggle-line-size: 5px;
 $toggle-line-angle: 405deg;
 $toggle-anim-speed: 0.9s;
+
+div.hamburger {
+  grid-area: menu;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
 
 .btn-toggle {
   position: fixed;
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  z-index: 1;
   user-select: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   padding: 12px;
@@ -44,30 +53,30 @@ $toggle-anim-speed: 0.9s;
     transition: background-color 0.2s ease-out;
   }
 
-  .open & {
+  .animate-exit-done & {
     @for $i from 1 through 2 {
       &:nth-child(#{$i}) {
-        animation: jump-#{$i} $toggle-anim-speed forwards ease;
+        animation: (jump-#{$i}) $toggle-anim-speed forwards ease;
         &:after {
-          animation: line-#{$i} $toggle-anim-speed forwards ease-in-out;
+          animation: (line-#{$i}) $toggle-anim-speed forwards ease-in-out;
         }
       }
     }
   }
 
-  .close & {
+  .animate-enter-done & {
     @for $i from 1 through 2 {
       &:nth-child(#{$i}) {
-        animation: jump-#{$i} $toggle-anim-speed reverse ease;
+        animation: (jump-#{$i}) $toggle-anim-speed reverse ease;
         &:after {
-          animation: line-#{$i} $toggle-anim-speed reverse ease-in-out;
+          animation: (line-#{$i}) $toggle-anim-speed reverse ease-in-out;
         }
       }
     }
   }
 
-  .open &,
-  .close & {
+  .animate-exit-done &,
+  .animate-enter-done & {
     &:nth-child(3) {
       animation: jump-3 $toggle-anim-speed forwards ease-out;
     }

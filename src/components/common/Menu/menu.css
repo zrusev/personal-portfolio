@@ -45,6 +45,10 @@ nav {
     color: rgb(182, 182, 182);
 } 
 
+#menu a:hover {
+    color: orangered;
+} 
+
 #menu li {
     padding: 0.5em 0;
     font-size: 2em;
