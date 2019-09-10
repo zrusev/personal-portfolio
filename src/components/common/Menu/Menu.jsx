@@ -9,21 +9,14 @@ class MenuComponent extends Component {
         this.state = {
             isChecked: this.props.isChecked
         }
-
-        this.handleCheckedEvent = this.handleCheckedEvent.bind(this);
     }
 
-    componentDidUpdate(prevState) {
-        console.log(prevState);
-        
-        if (prevState.isChecked !== this.state.isChecked) {            
+    componentDidUpdate(prevState) {        
+        if (this.props.isChecked !== prevState.isChecked) {
             this.setState({
-                isChecked: prevState.isChecked
-            });            
+                isChecked: this.props.isChecked
+            });
         }
-    }
-
-    handleCheckedEvent() {
     }
 
     render() {
@@ -31,8 +24,8 @@ class MenuComponent extends Component {
             <nav>
                 <div id="menuToggle">
                     <input type="checkbox"
-                           checked={this.state.isChecked}
-                           onChange={this.handleCheckedEvent}
+                        checked={this.state.isChecked}
+                        onChange={() => {}}
                     />
                     <span></span>
                     <span></span>
