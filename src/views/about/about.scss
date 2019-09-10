@@ -1,8 +1,9 @@
 main div.container div.text-container {
     color: rgb(110, 110, 110);
     padding: 3em;
-    text-align: right;
+    text-align: left;
     position: relative;
+    min-width: 60vw;
     
     &.animate {
         animation: text-container-animation 1s forwards;    
@@ -33,6 +34,53 @@ main div.container div.text-container {
     }
 }
 
+main div.social {
+    color: rgb(110, 110, 110);
+    padding: 0 3em 0 3em;
+    text-align: left;
+    position: relative;
+    min-width: 60vw;
+
+    ul {
+        display: flex;
+        flex-flow: row wrap;
+        list-style-type: none;
+        padding: 1em 0;
+        justify-content: flex-start;
+        align-items: flex-end;
+
+        li {
+            margin-right: 2em;
+            opacity: 0;
+
+            img {
+                display: block;
+                content: '';
+                border-radius: 5px;
+                width: 25px;
+                height: 25px;
+                
+                &:hover {
+                    animation: social-border 3s forwards;
+                }          
+            }  
+        }
+        
+        &.visible li {
+            opacity: 1;
+            animation: social-load 0.5s forwards;
+            transition: opacity 0.3s ease,
+                        animation 0.3s ease;
+
+            @for $i from 1 through 4 {
+                &:nth-child(#{$i}) {
+                    animation-delay: $i * 0.2s;
+                    transition-delay: $i * 0.2s;
+                }
+            }
+        }
+    }
+} 
 
 @keyframes text-container-animation {
     0%   { top: -50em; }
@@ -43,5 +91,36 @@ main div.container div.text-container {
 @keyframes text-container-border {
     20% {
        box-shadow: 0.5em 1.5em 3em orangered;
+    }
+}
+
+@keyframes social-border {
+    20% {
+       box-shadow: 0 0 1.5em orangered;
+    }
+}
+
+@keyframes social-load {
+    0% {
+        transform: translateX(-18em);
+    }
+
+    20% {
+        transform: translateX(-16em);
+    }
+
+    40% {
+        transform: translateX(-12em);
+    }
+
+    60% {
+        transform: translateX(-8em);
+    }
+
+    80% {
+        transform: translateX(-4em);
+    }
+    100% {
+        transform: translateX(0);
     }
 }

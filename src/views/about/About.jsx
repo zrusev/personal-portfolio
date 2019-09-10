@@ -2,6 +2,10 @@ import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import NavigationLeft from '../../components/common/Navigation-left/Navigation-left';
 import NavigationRight from '../../components/common/Navigation-right/Navigation-right';
+import envelope from '../../assets/images/message-closed-envelope.png';
+import github from '../../assets/images/github.png';
+import linkedin from '../../assets/images/linkedin.png';
+import facebook from '../../assets/images/facebook.png';
 import './about.scss';
 
 class AboutPage extends Component {
@@ -9,7 +13,8 @@ class AboutPage extends Component {
         super(props);
 
         this.state = {
-            hasBeenAnimated: false
+            hasBeenAnimated: false,
+            isVisible: false
         }
     }
     
@@ -19,7 +24,8 @@ class AboutPage extends Component {
 
         this.timeout = window.setTimeout(() => {
             this.setState({
-                hasBeenAnimated: true
+                hasBeenAnimated: true,
+                isVisible: true
             })
         }, 1000)
     }
@@ -38,7 +44,17 @@ class AboutPage extends Component {
                 <NavigationLeft direction="experience" />
                 <div className={'text-container ' + animate}>
                     <h3>Hello, my name is <strong>Zlatko Rusev</strong>.</h3>
-                    I am a full-stack web developer and technology enthusiast. Feel free to take a look at my latest projects on the web <Link to="/portfolio" style={{ textDecoration: 'none' }}><strong>portfolio</strong></Link> page.
+                        I am a full-stack web developer and technology enthusiast. 
+                        <br/>
+                        Feel free to take a look at my latest projects on the web <Link to="/portfolio" style={{ textDecoration: 'none' }}><strong>portfolio</strong></Link> page.
+                </div>
+                <div className="social">
+                    <ul className={this.state.isVisible ? 'visible' : ''}>
+                        <li><a href="mailto:zlatko.rusev@gmail.com" target="_blank"><img src={envelope} alt="envelope-logo" /></a></li>
+                        <li><a href="https://github.com/zrusev" target="_blank"><img src={github} alt="github-logo" /></a></li>
+                        <li><a href="https://www.linkedin.com/in/zlatko-rusev/" target="_blank"><img src={linkedin} alt="linkedin-logo" /></a></li>
+                        <li><a href="https://www.facebook.com/zlatko.rusev" target="_blank"><img src={facebook} alt="facebook-logo" /></a></li>
+                    </ul>
                 </div>
                 <NavigationRight direction="portfolio" />
             </Fragment>
