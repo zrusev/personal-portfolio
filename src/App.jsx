@@ -35,7 +35,9 @@ export default class App extends Component {
       return (
         <main>
           <MenuProvider value={menuState}>
-            <Menu isChecked={this.state.menuState.isChecked} />
+            <Menu isChecked={this.state.menuState.isChecked} 
+                  updateMenuState={this.updateMenuState}
+            />
             <Hamburger isClosed={this.state.menuState.isClosed}
                        isChecked={this.state.menuState.isChecked}
                        updateMenuState={this.updateMenuState}

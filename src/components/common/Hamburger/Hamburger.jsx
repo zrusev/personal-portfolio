@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MenuConsumer } from '../../contexts/MenuContext';
 import { CSSTransition } from 'react-transition-group';
 import './hamburger.scss';
 
 function HamburgerComponent(props) {
     const [showMenu, setshowMenu] = useState(props.isClosed);
+    
+    useEffect(() => {
+        setshowMenu(props.isClosed);
+    });
 
     const handleClickEvent = () => {
         props.updateMenuState({

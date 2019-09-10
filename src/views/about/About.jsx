@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import NavigationLeft from '../../components/common/Navigation-left/Navigation-left';
 import NavigationRight from '../../components/common/Navigation-right/Navigation-right';
 import './about.scss';
@@ -37,7 +38,7 @@ class AboutPage extends Component {
                 <NavigationLeft direction="experience" />
                 <div className={'text-container ' + animate}>
                     <h3>Hello, my name is <strong>Zlatko Rusev</strong>.</h3>
-                    I am a full-stack web developer and technology enthusiast. Feel free to take a look at my latest projects on the web portfolio page.
+                    I am a full-stack web developer and technology enthusiast. Feel free to take a look at my latest projects on the web <Link to="/portfolio" style={{ textDecoration: 'none' }}><strong>portfolio</strong></Link> page.
                 </div>
                 <NavigationRight direction="portfolio" />
             </Fragment>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { MenuConsumer } from '../../contexts/MenuContext';
+import { MenuConsumer, defaultMenuState } from '../../contexts/MenuContext';
 import './menu.scss';
 
 class MenuComponent extends Component {
@@ -20,6 +20,10 @@ class MenuComponent extends Component {
         }
     }
 
+    handleClickEvent = () => {
+        this.props.updateMenuState(defaultMenuState);
+    }
+
     render() {
         return (
             <nav>
@@ -32,10 +36,10 @@ class MenuComponent extends Component {
                     <span></span>
                     <span></span>
                     <ul id="menu">
-                        <Link to="/about"><li>Home</li></Link>
-                        <Link to="/portfolio"><li>Portfolio</li></Link>
-                        <Link to="/experience"><li>Experience</li></Link>
-                        <Link to="/education"><li>Education</li></Link>
+                        <Link to="/about" onClick={this.handleClickEvent}><li>Home</li></Link>
+                        <Link to="/portfolio" onClick={this.handleClickEvent}><li>Portfolio</li></Link>
+                        <Link to="/experience" onClick={this.handleClickEvent}><li>Experience</li></Link>
+                        <Link to="/education" onClick={this.handleClickEvent}><li>Education</li></Link>
                     </ul>
                 </div>
             </nav>
@@ -47,10 +51,10 @@ export default (props) => {
     return (
         <MenuConsumer>
             {
-                ({isChecked}) => (
+                ({isChecked, updateMenuState}) => (
                     <MenuComponent
-                        {...props}
                         isChecked={isChecked}
+                        updateMenuState={updateMenuState}
                     />
                 )
             }

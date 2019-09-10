@@ -22,6 +22,15 @@ main div.container div.text-container {
         transition: color 0.3s ease-in; 
         color: orangered;
     }
+
+    strong {    
+        color: rgb(110, 110, 110);
+    }
+
+    &:hover strong {    
+        transition: color 0.3s ease-in; 
+        color: orangered;
+    }
 }
 
 
