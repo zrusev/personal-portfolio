@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { MenuConsumer } from '../../contexts/MenuContext';
 import './menu.css';
 
@@ -31,10 +32,10 @@ class MenuComponent extends Component {
                     <span></span>
                     <span></span>
                     <ul id="menu">
-                        <a href="#"><li>Home</li></a>
-                        <a href="#"><li>Portfolio</li></a>
-                        <a href="#"><li>Experience</li></a>
-                        <a href="#"><li>Education</li></a>
+                        <Link to="/about"><li>Home</li></Link>
+                        <Link to="/portfolio"><li>Portfolio</li></Link>
+                        <Link to="/experience"><li>Experience</li></Link>
+                        <Link to="/education"><li>Education</li></Link>
                     </ul>
                 </div>
             </nav>

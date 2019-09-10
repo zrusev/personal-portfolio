@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './navigation.css';
 
-export default () => {
+export default (props) => {
     return (
         <div className="navigation navigation-left">
-            <Link to="/experience">
-                <span>about</span>
+            <Link to={`/${props.direction}`}>
+                <span>{props.direction}</span>
                 <em></em>
             </Link> 
         </div>

@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import NavigationLeft from '../../components/common/Navigation-left/Navigation-left';
+import NavigationRight from '../../components/common/Navigation-right/Navigation-right';
 import './about.css';
 
 class AboutPage extends Component {
@@ -31,10 +33,14 @@ class AboutPage extends Component {
                         : 'animate';
 
         return (
-            <div className={'text-container ' + animate}>
-                <h3>Hello, my name is <strong>Zlatko Rusev</strong>.</h3>
-                I am a full-stack web developer and technology enthusiast. Feel free to take a look at my latest projects on the web portfolio page.
-            </div>
+            <Fragment>
+                <NavigationLeft direction="experience" />
+                <div className={'text-container ' + animate}>
+                    <h3>Hello, my name is <strong>Zlatko Rusev</strong>.</h3>
+                    I am a full-stack web developer and technology enthusiast. Feel free to take a look at my latest projects on the web portfolio page.
+                </div>
+                <NavigationRight direction="portfolio" />
+            </Fragment>
         )
     }
 }

@@ -158,6 +158,7 @@ module.exports = (env) => {
         },
         devServer: {
             port: 9000,
+            historyApiFallback: true,
             contentBase: path.resolve(__dirname, 'dist'),
             compress: true,
         },
