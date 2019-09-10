@@ -30,7 +30,10 @@ class MenuComponent extends Component {
         return (
             <nav>
                 <div id="menuToggle">
-                    <input type="checkbox" checked={this.state.isChecked} onChange={this.handleCheckedEvent} />
+                    <input type="checkbox"
+                           checked={this.state.isChecked}
+                           onChange={this.handleCheckedEvent}
+                    />
                     <span></span>
                     <span></span>
                     <span></span>
@@ -46,7 +49,7 @@ class MenuComponent extends Component {
     }
 }
 
-const MenuComponentWithProps = (props) => {    
+export default (props) => {    
     return (
         <MenuConsumer>
             {
@@ -60,5 +63,3 @@ const MenuComponentWithProps = (props) => {
         </MenuConsumer>
     )
 }
-
-export default MenuComponentWithProps;

@@ -2,7 +2,7 @@ import { createContext } from 'react';
 
 const defaultMenuState = {
     isChecked: false,
-    buttonState: 'close',
+    isClosed: true,
     updateMenuState() {}
 }
 

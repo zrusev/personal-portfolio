@@ -1,60 +1,54 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { MenuConsumer } from '../../contexts/MenuContext';
+import { CSSTransition } from 'react-transition-group';
 import './hamburger.css';
 
-class HamburgerComponent extends Component {
-    constructor(props) {
-        super(props);
+function HamburgerComponent(props) {
+    const [showMenu, setshowMenu] = useState(props.isClosed);
 
-        this.handleClickEvent = this.handleClickEvent.bind(this); 
-    }
-
-    handleClickEvent() {
-        const { buttonState, isChecked } = this.props;
-
-        this.props.updateMenuState({
-            buttonState: buttonState === 'close'
-                ? 'open'
-                : 'close',
-            isChecked: !isChecked
+    const handleClickEvent = () => {
+        props.updateMenuState({
+            isClosed: showMenu,
+            isChecked: !props.isChecked
         });
     }
 
-    render() {
-        const { buttonState } = this.props;
-
-        return (
-            <div className="hamburger">
-                <button className={'btn-toggle ' + buttonState}
-                        id="menu-toggle"
-                        onClick={this.handleClickEvent}>
+    return (
+        <div className="hamburger">
+            <CSSTransition
+                in={showMenu}
+                timeout={100}
+                classNames={'animate'}
+                appear
+            >
+                <button id="menu-toggle"
+                        className='btn-toggle'
+                        onClick={() => {
+                            setshowMenu(!showMenu);
+                            handleClickEvent();
+                        }}
+                >
                     <div className="line"></div>
                     <div className="line"></div>
                     <div className="line"></div>
                 </button>
-            </div>
-        )
-    }
+            </CSSTransition>
+        </div>
+    )
 }
 
-export default class HamburgerComponentWithContext extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return (
-            <MenuConsumer>
-                {
-                    ({buttonState, isChecked, updateMenuState}) => (
-                        <HamburgerComponent
-                            buttonState={buttonState}
-                            isChecked={isChecked}
-                            updateMenuState={updateMenuState}
-                        />
-                    )
-                }
-            </MenuConsumer>
-        )
-    }
+export default () => {
+    return (
+        <MenuConsumer>
+            {
+                ({isClosed, isChecked, updateMenuState}) => (
+                    <HamburgerComponent
+                        isClosed={isClosed}
+                        isChecked={isChecked}
+                        updateMenuState={updateMenuState}
+                    />
+                )
+            }
+        </MenuConsumer>
+    )
 }
