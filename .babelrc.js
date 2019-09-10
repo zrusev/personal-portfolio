@@ -19,8 +19,17 @@ module.exports = {
         [
             "@babel/preset-react",
             {
-                "useBuiltIns": true,
+                "useBuiltIns": 'usage',
             },
         ]
     ],
+    "plugins": [
+        [
+            "@babel/plugin-syntax-class-properties",
+        ],
+        [
+            "@babel/plugin-proposal-class-properties",
+        ]
+    ]
+
 }

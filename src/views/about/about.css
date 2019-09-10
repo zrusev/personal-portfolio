@@ -3,7 +3,10 @@ main div.container div.text-container {
     padding: 3em;
     text-align: right;
     position: relative;
-    animation: text-container-animation 1s forwards;
+}
+
+main div.container div.text-container.animate {
+    animation: text-container-animation 1s forwards;    
 }
 
 main div.container div.text-container:hover {
