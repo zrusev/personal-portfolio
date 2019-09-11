@@ -1,6 +1,6 @@
 export default {
   get: () => {
-    const sleepThreadPromise = new Promise((resolve) => setTimeout(resolve, 2500));
+    const sleepThreadPromise = new Promise((resolve) => setTimeout(resolve, 750));
     
     const fetchDataPromise = Promise.resolve({
       data: [
