@@ -1,4 +1,4 @@
-@import url('./layout.css');
+@import './layout.css';
 
 *, *:before, *:after {
     padding: 0;

@@ -1,5 +1,5 @@
-@import "./variables.css";
-@import "./typography.css";
+@import './variables.css';
+@import './typography.css';
 
 body {  
     background: rgb(47, 47, 47);
@@ -19,4 +19,4 @@ main div.container {
     align-items: center;
 }
 
-@import "./app-media.css";
+@import './app-media.css';

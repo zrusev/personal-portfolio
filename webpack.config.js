@@ -3,10 +3,9 @@ const glob = require('glob');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-// const CopyPlugin = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const postCssPresetEnv = require('postcss-preset-env');
 const cssnano = require('cssnano');
-const Critters = require('critters-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
@@ -20,12 +19,10 @@ const prodStylesConfig = [
             sourceMap: true,
         }
     },
-    // {
-    //     loader: 'style-loader',
-    // },
     {
         loader: 'css-loader',
         options: {
+            importLoaders: 1, // in order to minify @imports of nested css files
             sourceMap: true,
         }
     },
@@ -60,12 +57,6 @@ const prodStylesConfig = [
 ];
 
 const devStylesConfig = [
-    // {
-    //     loader: MiniCssExtractPlugin.loader,
-    //     options: {
-    //         sourceMap: true,
-    //     }
-    // },
     {
         loader: 'style-loader',
     },
@@ -75,18 +66,6 @@ const devStylesConfig = [
             sourceMap: true,
         }
     },
-    // {
-    //     loader: 'postcss-loader',
-    //     options: {
-    //         ident: 'postcss-2',
-    //         sourceMap: true,
-    //         minimize: true,
-    //         plugins: [
-    //             autoprefixer(),
-    //             cssnano(),
-    //         ]
-    //     }
-    // },
     {
         loader: 'fast-sass-loader',
         options: {
@@ -118,21 +97,19 @@ const defaultStylesPlugins = [
 
 const prodStylesPlugins = [
     ...defaultStylesPlugins,
-    new PurgecssPlugin({
+    new PurgecssPlugin({ //currently no matching event
         paths: glob.sync(`${path.resolve(__dirname, 'src')}/**/*`, { nodir: true })
     }),
     new MiniCssExtractPlugin({
         filename: 'styles/[name].min.css'
     }),
-    // new Critters({
-    //     preload: 'swap',
-    // }),
-    // new CopyPlugin([
+    // new CopyWebpackPlugin([
     //     {
-    //         from: path.resolve(__dirname, 'src', 'architecture.md'),
-    //         to: path.resolve(__dirname, 'dist')
+    //         from: path.resolve(__dirname, 'src/assets/images/'),
+    //         to: path.resolve(__dirname, 'dist/images')
     //     }
-    // ]),            
+    // ]),
+          
 ];
 
 module.exports = (env) => {
@@ -192,13 +169,6 @@ module.exports = (env) => {
                             useRelativePaths: true,
                         },
                       },
-                    //   {
-                    //     loader: 'url-loader',
-                    //     options: {
-                    //         limit: 10000,
-                    //         name: '[name].[ext]',
-                    //     }
-                    //   },
                     ],
                 },
                 {

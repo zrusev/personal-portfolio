@@ -3,7 +3,6 @@ import NavigationLeft from '../../components/common/Navigation-left/Navigation-l
 import NavigationRight from '../../components/common/Navigation-right/Navigation-right';
 import portfolioService from '../../services/portfolio-service';
 import './portfolio.scss';
-import './spinner.scss';
 
 export default class PortfolioPage extends Component {
     constructor(props) {
@@ -34,7 +33,7 @@ export default class PortfolioPage extends Component {
             return (
                 <Fragment>
                     <NavigationLeft direction="about" />
-                    <div class="spinner"></div>                   
+                    <div className="spinner"></div>                   
                     <NavigationRight direction="education" />
                 </Fragment>
             )
