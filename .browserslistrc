@@ -1,6 +1,7 @@
 # Browsers that we support
 
 last 2 major versions
+edge >= 41
 not IE 10
 not Baidu >= 0
 not OperaMini >= 0

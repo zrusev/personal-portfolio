@@ -8,19 +8,19 @@ export default {
           id: 0,
           name: 'makasa-store',
           tags: ['tag1', 'tag2', 'tag3', 'tag4'],
-          url: '/dist/images/makasa-store.jpg',
+          url: 'makasa-store.jpg',
         },
         {
           id: 1,
           name: 'blazor-traffic',
           tags: ['tag1', 'tag2', 'tag3', 'tag4'],
-          url: '/dist/images/blazor-traffic.jpg',
+          url: 'blazor-traffic.jpg',
         },
         {
             id: 3,
             name: 'metrics-track',
             tags: ['tag1', 'tag2', 'tag3', 'tag4'],
-            url: '/dist/images/metrics-track.jpg',
+            url: 'metrics-track.jpg',
         }  
       ]
     });

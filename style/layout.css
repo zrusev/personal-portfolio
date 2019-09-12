@@ -1,15 +1,13 @@
 @font-face {
   font-family: 'Quicksand';
+  src: url('../src/assets/fonts/Quicksand-Bold.woff2') format('woff2');
   font-style: normal;
-  src:
-    local('Quicksand-Bold'),
-    url(../src/assets/fonts/Quicksand-Bold.woff2) format('woff2');
+  font-weight: 600;
 }
 
 @font-face {
   font-family: 'Quicksand';
+  src: url('../src/assets/fonts/Quicksand-Regular.woff2') format('woff2');
   font-style: normal;
-  src:
-    local('Quicksand-Regular'),
-    url(../src/assets/fonts/Quicksand-Regular.woff2) format('woff2');
+  font-weight: 600;
 }

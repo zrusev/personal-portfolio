@@ -34,6 +34,12 @@ main div.container div.text-container {
     }
 }
 
+$list: 'email.svg',
+       'github.svg',
+       'linkedin.svg',
+       'facebook.svg',
+       'spotify.svg';
+
 main div.social {
     color: rgb(110, 110, 110);
     padding: 0 3em 0 3em;
@@ -50,31 +56,35 @@ main div.social {
         align-items: flex-end;
 
         li {
-            margin-right: 2em;
+            margin-right: 1.5em;
             opacity: 0;
 
-            img {
-                display: block;
-                content: '';
-                border-radius: 5px;
-                width: 25px;
-                height: 25px;
-                
+            div.svg-social {
+                border-radius: 30px;
+                width: 30px;
+                height: 30px;
+
                 &:hover {
                     animation: social-border 3s forwards;
-                }          
-            }  
+                }
+            }
+
+            @for $i from 1 through length($list) {
+                &:nth-child(#{$i}) div.svg-social {
+                    background-image: url('../../assets/icons/' + nth($list, $i));
+                }
+            }
         }
         
         &.visible li {
             opacity: 1;
-            animation: social-load 0.5s forwards;
+            animation: social-load 0.3s forwards;
             transition: opacity 0.3s ease,
                         animation 0.3s ease;
 
-            @for $i from 1 through 4 {
+            @for $i from 1 through length($list) {
                 &:nth-child(#{$i}) {
-                    animation-delay: $i * 0.2s;
+                    animation-delay: $i * 0.1s;
                     transition-delay: $i * 0.2s;
                 }
             }
@@ -110,11 +120,11 @@ main div.social {
     }
 
     40% {
-        transform: translateX(-12em);
+        transform: translateX(-14em);
     }
 
     60% {
-        transform: translateX(-8em);
+        transform: translateX(-12em);
     }
 
     80% {

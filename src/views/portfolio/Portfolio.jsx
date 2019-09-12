@@ -25,7 +25,6 @@ export default class PortfolioPage extends Component {
             });
     }
 
-
     render() {
         const { data: entities } = this.state.data;
 
@@ -39,6 +38,10 @@ export default class PortfolioPage extends Component {
             )
         }
         
+        const currentEnv = process.env.NODE_ENV === 'production'
+            ? '/dist/images/'
+            : '/assets/images/portfolio/';
+
         return (
             <Fragment>
                 <NavigationLeft direction="about" />
@@ -52,7 +55,7 @@ export default class PortfolioPage extends Component {
                                     ))
                                 }
                             </div>
-                            <img src={entity.url} alt={entity.name} />
+                            <img src={currentEnv + entity.url} alt={entity.name} />
                         </div>
                     ))
                 }

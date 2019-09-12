@@ -34,7 +34,9 @@ const prodStylesConfig = [
             minimize: true,
             plugins: [
                 autoprefixer(),
-                cssnano(),
+                cssnano({
+                    preset: ['default']
+                }),
             ]
         }
     },
@@ -97,24 +99,26 @@ const defaultStylesPlugins = [
 
 const prodStylesPlugins = [
     ...defaultStylesPlugins,
-    new PurgecssPlugin({ //currently no matching event
-        paths: glob.sync(`${path.resolve(__dirname, 'src')}/**/*`, { nodir: true })
-    }),
+    // new PurgecssPlugin({
+    //     paths: glob.sync(`${path.resolve(__dirname, 'src')}/**/*`, { nodir: true })
+    // }),
     new MiniCssExtractPlugin({
         filename: 'styles/[name].min.css'
     }),
-    // new CopyWebpackPlugin([
-    //     {
-    //         from: path.resolve(__dirname, 'src/assets/images/'),
-    //         to: path.resolve(__dirname, 'dist/images')
-    //     }
-    // ]),
-          
+    new CopyWebpackPlugin([
+        {
+            from: path.resolve(__dirname, 'src/assets/images'),
+            to: path.resolve(__dirname, 'dist/images')
+        }
+    ]),   
 ];
 
 module.exports = (env) => {
     const isProduction = env === 'production';
     console.log(`Running in Environment: ${env}`);
+    
+    const isEnvProduction = process.env.NODE_ENV;
+    console.log(`NODE_ENV Environment: ${isEnvProduction}`);
     
     return smp.wrap({
         mode: env,
@@ -157,7 +161,7 @@ module.exports = (env) => {
                         : devStylesConfig,
                 },
                 {
-                    test: /\.(png|jpe?g|gif|ico)$/i,
+                    test: /\.(png|jpe?g|gif)$/i,
                     use: [
                       {
                         loader: 'file-loader',
@@ -165,8 +169,22 @@ module.exports = (env) => {
                             name: '[name].[ext]',
                             context: path.resolve(__dirname, "src/assets/"),
                             outputPath: 'images',
-                            publicPath: '../images',
+                            publicPath: process.env.NODE_ENV === 'production' 
+                                ? '../../' 
+                                : '/images',
                             useRelativePaths: true,
+                        },
+                      },
+                    ],
+                },
+                {
+                    test: /\.(svg)$/i,
+                    use: [
+                      {
+                        loader: 'url-loader',
+                        options: {
+                          mimetype: 'image/svg+xml',
+                          limit: 1024 * 6
                         },
                       },
                     ],
@@ -180,7 +198,9 @@ module.exports = (env) => {
                                 name: '[name].[ext]',
                                 context: path.resolve(__dirname, "src/assets/"),
                                 outputPath: 'fonts',
-                                publishPath: '../fonts',
+                                publicPath: process.env.NODE_ENV === 'production' 
+                                    ? '../../' 
+                                    : '/fonts',
                                 useRelativePaths: true,
                             }
                         }

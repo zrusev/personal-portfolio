@@ -2,10 +2,10 @@ import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import NavigationLeft from '../../components/common/Navigation-left/Navigation-left';
 import NavigationRight from '../../components/common/Navigation-right/Navigation-right';
-import envelope from '../../assets/images/message-closed-envelope.png';
-import github from '../../assets/images/github.png';
-import linkedin from '../../assets/images/linkedin.png';
-import facebook from '../../assets/images/facebook.png';
+// import envelope from '../../assets/images/message-closed-envelope.png';
+// import github from '../../assets/images/github.png';
+// import linkedin from '../../assets/images/linkedin.png';
+// import facebook from '../../assets/images/facebook.png';
 import './about.scss';
 
 class AboutPage extends Component {
@@ -50,10 +50,11 @@ class AboutPage extends Component {
                 </div>
                 <div className="social">
                     <ul className={this.state.isVisible ? 'visible' : ''}>
-                        <li><a href="mailto:zlatko.rusev@gmail.com" target="_blank"><img src={envelope} alt="envelope-logo" /></a></li>
-                        <li><a href="https://github.com/zrusev" target="_blank"><img src={github} alt="github-logo" /></a></li>
-                        <li><a href="https://www.linkedin.com/in/zlatko-rusev/" target="_blank"><img src={linkedin} alt="linkedin-logo" /></a></li>
-                        <li><a href="https://www.facebook.com/zlatko.rusev" target="_blank"><img src={facebook} alt="facebook-logo" /></a></li>
+                        <li><a href="mailto:zlatko.rusev@gmail.com"><div className="svg-social"></div></a></li>
+                        <li><a href="https://github.com/zrusev" target="_blank"><div className="svg-social"></div></a></li>
+                        <li><a href="https://www.linkedin.com/in/zlatko-rusev" target="_blank"><div className="svg-social"></div></a></li>
+                        <li><a href="https://www.facebook.com/zlatko.rusev" target="_blank"><div className="svg-social"></div></a></li>
+                        <li><a href="https://open.spotify.com/user/11130161695?si=KFpAx5fiQc2N8NQRpcqoqQ" target="_blank"><div className="svg-social"></div></a></li>
                     </ul>
                 </div>
                 <NavigationRight direction="portfolio" />
