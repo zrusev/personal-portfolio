@@ -3,13 +3,15 @@ import NavigationLeft from '../../components/common/Navigation-left/Navigation-l
 import NavigationRight from '../../components/common/Navigation-right/Navigation-right';
 import portfolioService from '../../services/portfolio-service';
 import './portfolio.scss';
+import ctx from '../../services/ctx-service';
 
 export default class PortfolioPage extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            data: []
+            data: [],
+            urls: {...ctx}
         }
     }
 
@@ -37,10 +39,8 @@ export default class PortfolioPage extends Component {
                 </Fragment>
             )
         }
-        
-        const currentEnv = process.env.NODE_ENV === 'production'
-            ? '/dist/images/'
-            : '/assets/images/portfolio/';
+
+        const { urls } = this.state;
 
         return (
             <Fragment>
@@ -55,7 +55,7 @@ export default class PortfolioPage extends Component {
                                     ))
                                 }
                             </div>
-                            <img src={currentEnv + entity.url} alt={entity.name} />
+                            <img src={urls[entity.name]} alt={entity.name} />
                         </div>
                     ))
                 }

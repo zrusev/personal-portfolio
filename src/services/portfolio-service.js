@@ -8,20 +8,32 @@ export default {
           id: 0,
           name: 'makasa-store',
           tags: ['tag1', 'tag2', 'tag3', 'tag4'],
-          url: 'makasa-store.jpg',
         },
         {
           id: 1,
           name: 'blazor-traffic',
           tags: ['tag1', 'tag2', 'tag3', 'tag4'],
-          url: 'blazor-traffic.jpg',
         },
         {
-            id: 3,
-            name: 'metrics-track',
-            tags: ['tag1', 'tag2', 'tag3', 'tag4'],
-            url: 'metrics-track.jpg',
-        }  
+          id: 2,
+          name: 'metrics-track',
+          tags: ['tag1', 'tag2', 'tag3', 'tag4'],
+        },
+        {
+          id: 3,
+          name: 'makasa-store',
+          tags: ['tag1', 'tag2', 'tag3', 'tag4'],
+        },
+        {
+          id: 4,
+          name: 'blazor-traffic',
+          tags: ['tag1', 'tag2', 'tag3', 'tag4'],
+        },
+        {
+          id: 5,
+          name: 'metrics-track',
+          tags: ['tag1', 'tag2', 'tag3', 'tag4'],
+        },
       ]
     });
 
