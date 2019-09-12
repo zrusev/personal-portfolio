@@ -34,6 +34,16 @@ export default {
           name: 'metrics-track',
           tags: ['tag1', 'tag2', 'tag3', 'tag4'],
         },
+        {
+          id: 6,
+          name: 'blazor-traffic',
+          tags: ['tag1', 'tag2', 'tag3', 'tag4'],
+        },
+        {
+          id: 7,
+          name: 'metrics-track',
+          tags: ['tag1', 'tag2', 'tag3', 'tag4'],
+        },
       ]
     });
 

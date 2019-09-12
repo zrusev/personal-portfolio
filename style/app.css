@@ -8,7 +8,7 @@ body {
 main {
     display: grid;
     grid-template-columns: 15vw 15vw auto 15vw 15vw;
-    grid-template-rows: 20vh 60vh auto;
+    grid-template-rows: 20vh auto 10vh;
 }
 
 main div.container {
