@@ -1,3 +1,4 @@
+import { hot } from 'react-hot-loader/root';
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import '../style/app.css';
@@ -9,7 +10,7 @@ import PortfolioPage from './views/portfolio/Portfolio';
 import ExperiencePage from './views/experience/Experience';
 import EducationPage from './views/education/Education';
 
-export default class App extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
   
@@ -57,3 +58,5 @@ export default class App extends Component {
       );
   }
 };
+
+export default hot(App);

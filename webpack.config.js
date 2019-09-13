@@ -142,6 +142,7 @@ module.exports = (env) => {
             historyApiFallback: true,
             contentBase: path.resolve(__dirname, 'dist'),
             compress: true,
+            hot: true,
         },
         module: {
             rules: [
@@ -159,6 +160,7 @@ module.exports = (env) => {
                     use: isProduction
                         ? prodStylesConfig
                         : devStylesConfig,
+
                 },
                 {
                     test: /\.(png|jpe?g|gif)$/i,
