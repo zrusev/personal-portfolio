@@ -19,13 +19,15 @@ module.exports = (env) => {
         mode: env,
         devtool: 'source-map',
         output: {
-            filename: 'scripts/[name].min.js',
+            filename: 'scripts/[name]-[chunkhash].min.js',
         },
         performance: {
             // maxEntrypointSize: 512000,
             // maxAssetSize: 512000,
         },
         optimization: {
+            // runtimeChunk: 'single',
+            // moduleIds: 'hashed',
             minimize: true,
             minimizer: [ 
                 new TerserPlugin({
@@ -35,12 +37,23 @@ module.exports = (env) => {
                     sourceMap: true,
                     terserOptions: {
                         warnings: false,
+                        toplevel: true,
                         output: {
                             comments: false,
                         }
                     }
                 }),
             ],
+            splitChunks: {
+                automaticNameDelimiter: '~',
+                cacheGroups: {
+                    default: false,
+                    vendors: {
+                        test: /[\\/]node_modules[\\/]/,
+                        priority: -10
+                    }
+                }
+            }
         },
         module: {
             rules: [
@@ -102,7 +115,7 @@ module.exports = (env) => {
                             'animate-exit-done', 'animate-enter-done', 'media.ar-9x16', 'img', 'section-education']
             }),
             new MiniCssExtractPlugin({
-                filename: 'styles/[name].min.css'
+                filename: 'styles/[name]-[contenthash].min.css'
             }),
             new CopyWebpackPlugin([
                 {
