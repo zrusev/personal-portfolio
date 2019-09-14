@@ -1,4 +1,5 @@
 const path = require('path');
+const glob = require('glob');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const postCssPresetEnv = require('postcss-preset-env');
@@ -73,9 +74,11 @@ module.exports = (env) => {
             ]
         },
         plugins: [
-            // new PurgecssPlugin({
-            //     paths: glob.sync(`${path.resolve(__dirname, 'src')}/**/*`, { nodir: true })
-            // }),
+            new PurgecssPlugin({
+                paths: glob.sync(`${path.resolve(__dirname, 'src')}/**/*`, { nodir: true }),
+                whitelist: ['html', 'body', 'blockquote', 'form', 'option', 'select', 'table', 'textarea', 
+                            'animate-exit-done', 'animate-enter-done', 'media.ar-9x16', 'img', 'section-education']
+            }),
             new MiniCssExtractPlugin({
                 filename: 'styles/[name].min.css'
             }),
