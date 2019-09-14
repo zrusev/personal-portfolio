@@ -4,6 +4,7 @@ const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
 const smp = new SpeedMeasurePlugin();
 const merge = require('webpack-merge');
 const common = require('./webpack.common.config');
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 
 module.exports = (env) => {
     console.log(`Environment: ${env}; NODE_ENV: ${process.env.NODE_ENV}`);
@@ -37,20 +38,20 @@ module.exports = (env) => {
                         {
                             loader: 'css-loader',
                             options: {
-                                sourceMap: true,
+                                sourceMap: false,
                             }
                         },
                         {
                             loader: 'fast-sass-loader',
                             options: {
-                                sourceMap: true,
+                                sourceMap: false,
                             }
                         },
                         {
                             loader: 'postcss-loader',
                             options: {
                                 ident: 'postcss-1',
-                                sourceMap: true,
+                                sourceMap: false,
                                 plugins: [
                                     postCssPresetEnv(),
                                 ]
@@ -60,5 +61,8 @@ module.exports = (env) => {
                 },
             ]
         },
+        plugins: [
+            new HardSourceWebpackPlugin(),
+        ]
     }));
 };

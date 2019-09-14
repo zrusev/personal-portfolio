@@ -2,8 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
-const smp = new SpeedMeasurePlugin();
 
 module.exports = {
     resolve: {
@@ -23,6 +21,9 @@ module.exports = {
                 use: [
                     {
                         loader: 'babel-loader',
+                        options: {
+                            cacheDirectory: true,
+                        }
                     }
                 ]
             },

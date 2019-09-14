@@ -10,6 +10,7 @@ const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
 const smp = new SpeedMeasurePlugin();
 const merge = require('webpack-merge');
 const common = require('./webpack.common.config');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = (env) => {
     console.log(`Environment: ${env}; NODE_ENV: ${process.env.NODE_ENV}`);
@@ -19,6 +20,27 @@ module.exports = (env) => {
         devtool: 'source-map',
         output: {
             filename: 'scripts/[name].min.js',
+        },
+        performance: {
+            // maxEntrypointSize: 512000,
+            // maxAssetSize: 512000,
+        },
+        optimization: {
+            minimize: true,
+            minimizer: [ 
+                new TerserPlugin({
+                    test: /\.js(\?.*)?$/i,
+                    cache: true,
+                    parallel: true,
+                    sourceMap: true,
+                    terserOptions: {
+                        warnings: false,
+                        output: {
+                            comments: false,
+                        }
+                    }
+                }),
+            ],
         },
         module: {
             rules: [
