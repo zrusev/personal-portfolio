@@ -1,47 +1,43 @@
-module.exports = {
-    "presets": process.env.NODE_ENV === 'production'
-        ?  [
-                [
-                    "@babel/preset-env",
-                    {
-                        "modules": false,
-                        "spec": true,
-                        "useBuiltIns": "usage",
-                        "debug": false,
-                        "exclude": [
-                            "@babel/plugin-proposal-unicode-property-regex"
-                        ],
-                        "corejs": {
-                            "version": 3,
-                            "proposals": false,
-                        },
-                    }
-                ],
-                [
-                    "@babel/preset-react",
-                    {
-                        "useBuiltIns": 'usage',
-                    },
-                ]
-            ]
-        :   [
-                [
-                    "@babel/preset-react",
-                    {
-                        "useBuiltIns": 'usage',
-                    },
+const defaultPresets = [
+    "@babel/preset-react",
+    {
+        "useBuiltIns": 'usage',
+    },
 
-                ]
-            ],
-    "plugins": [
-        [
-            "@babel/plugin-syntax-class-properties",
+];
+
+const prodPresets = [
+    "@babel/preset-env",
+    {
+        "modules": false,
+        "spec": true,
+        "useBuiltIns": "usage",
+        "debug": false,
+        "exclude": [
+            "@babel/plugin-proposal-unicode-property-regex"
         ],
-        [
-            "@babel/plugin-proposal-class-properties",
-        ],
-        [ 
-            "react-hot-loader/babel"
-        ] 
-    ]
+        "corejs": {
+            "version": 3,
+            "proposals": false,
+        },
+    }
+];
+
+const presets = [ defaultPresets ];
+const plugins = [
+    [
+        "@babel/plugin-syntax-class-properties",
+    ],
+    [
+        "@babel/plugin-proposal-class-properties",
+    ],
+    [ 
+        "react-hot-loader/babel"
+    ] 
+];
+
+if (process.env.NODE_ENV.trim() === "production") {
+    presets.push(prodPresets);
 }
+
+module.exports = { presets, plugins };
