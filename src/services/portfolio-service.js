@@ -7,42 +7,27 @@ export default {
         {
           id: 0,
           name: 'makasa-store',
-          tags: ['tag1', 'tag2', 'tag3', 'tag4'],
+          tags: ['AngularJS', 'Material UI', 'NgRx Store', 'Observables', 'RxJS'],
         },
         {
           id: 1,
           name: 'blazor-traffic',
-          tags: ['tag1', 'tag2', 'tag3', 'tag4'],
+          tags: ['Blazor', 'Razor', 'Razor Pages', 'ASP.NET Core'],
         },
         {
           id: 2,
           name: 'metrics-track',
-          tags: ['tag1', 'tag2', 'tag3', 'tag4'],
+          tags: ['ASP.NET Core', 'EF Core', 'jQuery', 'AJAX', 'Boostrap', 'AutoМapper', 'Azure Key Vault'],
         },
         {
           id: 3,
-          name: 'makasa-store',
-          tags: ['tag1', 'tag2', 'tag3', 'tag4'],
+          name: 'flight-system',
+          tags: ['ReactJS', 'ExpressJS', 'Authentication', 'Roles', 'Routing', 'Bound forms'],
         },
         {
           id: 4,
-          name: 'blazor-traffic',
-          tags: ['tag1', 'tag2', 'tag3', 'tag4'],
-        },
-        {
-          id: 5,
-          name: 'metrics-track',
-          tags: ['tag1', 'tag2', 'tag3', 'tag4'],
-        },
-        {
-          id: 6,
-          name: 'blazor-traffic',
-          tags: ['tag1', 'tag2', 'tag3', 'tag4'],
-        },
-        {
-          id: 7,
-          name: 'metrics-track',
-          tags: ['tag1', 'tag2', 'tag3', 'tag4'],
+          name: 'bike-rental',
+          tags: ['AngularJS', 'Ng-Bootstrap', 'Bootstap', 'Google Maps', 'Hooks', 'Observables', 'RxJS'],
         },
       ]
     });
