@@ -11,16 +11,26 @@ export default class PortfolioPage extends Component {
 
         this.state = {
             data: [],
-            urls: {...ctx}
+            urls: {...ctx},
+            tags: null,
         }
     }
 
     componentDidMount() {
         return portfolioService.get()
-            .then(data => {                
+            .then(data => {
+                const tags = new Set(Object.values(data)
+                    .reduce((acc, cur) => {
+                            return acc.concat(cur.map(t => t.tags))
+                        }, [])
+                    .reduce((acc, cur) => {
+                            return acc.concat(cur)
+                        }, []));
+
                 this.setState({
-                    data
-                })
+                    data,
+                    tags
+                });
             })
             .catch(error => {
                 console.log(error);                
@@ -41,22 +51,25 @@ export default class PortfolioPage extends Component {
         }
 
         const { urls } = this.state;
+        const { tags } = this.state;
 
         return (
             <Fragment>
                 <NavigationLeft direction="about" />
                 {                    
                     entities.map(entity => (                     
-                        <div className="media ar-9x16" key={entity.id} id={entity.id}>
-                            <div className="tags">
-                                {
-                                    entity.tags.map((tag, ind) => (
-                                        <span id={ind} key={ind}>{tag}</span>
-                                    ))
-                                }
+                        <a href={entity.address} target="_blank" key={entity.id} id={entity.id}>
+                            <div className="media ar-9x16" >
+                                <div className="tags">
+                                    {
+                                        entity.tags.map((tag, ind) => (
+                                                <span id={ind} key={ind}>{tag}</span>
+                                                ))
+                                            }
+                                </div>
+                                <img src={urls[entity.name]} alt={entity.name} />
                             </div>
-                            <img src={urls[entity.name]} alt={entity.name} />
-                        </div>
+                        </a>
                     ))
                 }
                 <NavigationRight direction="education" />

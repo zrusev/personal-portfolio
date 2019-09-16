@@ -8,26 +8,31 @@ export default {
           id: 0,
           name: 'makasa-store',
           tags: ['AngularJS', 'Material UI', 'NgRx Store', 'Observables', 'RxJS'],
+          address: 'https://github.com/zrusev/ng-makasa-store',
         },
         {
           id: 1,
           name: 'blazor-traffic',
           tags: ['Blazor', 'Razor', 'Razor Pages', 'ASP.NET Core'],
+          address: 'https://github.com/zrusev/blazor-traffic',
         },
         {
           id: 2,
           name: 'metrics-track',
           tags: ['ASP.NET Core', 'EF Core', 'jQuery', 'AJAX', 'Boostrap', 'AutoМapper', 'Azure Key Vault'],
+          address: 'https://github.com/zrusev/tracking-system',
         },
         {
           id: 3,
           name: 'flight-system',
-          tags: ['ReactJS', 'ExpressJS', 'Authentication', 'Roles', 'Routing', 'Bound forms'],
+          tags: ['ReactJS', 'ExpressJS'],
+          address: 'https://github.com/zrusev/flight-system',
         },
         {
           id: 4,
           name: 'bike-rental',
           tags: ['AngularJS', 'Ng-Bootstrap', 'Bootstap', 'Google Maps', 'Hooks', 'Observables', 'RxJS'],
+          address: 'https://github.com/zrusev/bike-rental-system',
         },
       ]
     });
