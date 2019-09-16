@@ -87,6 +87,26 @@
     }
 }
 
+div.filters {
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 41em;
+    margin: 1em;
+
+    span {
+        font-size: 0.6em;
+        margin: 0.5em;
+        padding: 0.2em;
+        background: orangered;
+        color: #fff;
+        min-width: 4.5em;
+        opacity: 1;
+        text-align: center;
+        box-shadow: 2px 2px 0 darkgray;
+        cursor: pointer;
+    }
+}
+
 @keyframes expand {
     10% {
         height: 10%;

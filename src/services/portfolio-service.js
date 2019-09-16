@@ -31,7 +31,7 @@ export default {
         {
           id: 4,
           name: 'bike-rental',
-          tags: ['AngularJS', 'Ng-Bootstrap', 'Bootstap', 'Google Maps', 'Hooks', 'Observables', 'RxJS'],
+          tags: ['AngularJS', 'Ng-Bootstrap', 'Bootstap', 'Hooks', 'Observables', 'RxJS'],
           address: 'https://github.com/zrusev/bike-rental-system',
         },
       ]

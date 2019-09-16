@@ -11,25 +11,41 @@ export default class PortfolioPage extends Component {
 
         this.state = {
             data: [],
+            entities: [],
             urls: {...ctx},
             tags: null,
         }
+
+        this.filterTags = this.filterTags.bind(this);
+    }
+
+    filterTags(event) {
+        const filter = event.target.dataset.id;
+        const data = Object.values(this.state.data)
+            .reduce((acc, curr) => Object.values(curr)
+                .filter(tag => tag.tags.includes(filter))
+            , []);
+        
+        this.setState({
+            data
+        });
     }
 
     componentDidMount() {
         return portfolioService.get()
             .then(data => {
                 const tags = new Set(Object.values(data)
-                    .reduce((acc, cur) => {
-                            return acc.concat(cur.map(t => t.tags))
+                    .reduce((acc, curr) => {
+                            return acc.concat(curr.map(t => t.tags))
                         }, [])
-                    .reduce((acc, cur) => {
-                            return acc.concat(cur)
+                    .reduce((acc, curr) => {
+                            return acc.concat(curr)
                         }, []));
 
                 this.setState({
                     data,
-                    tags
+                    tags,
+                    entities: data,
                 });
             })
             .catch(error => {
@@ -38,7 +54,7 @@ export default class PortfolioPage extends Component {
     }
 
     render() {
-        const { data: entities } = this.state.data;
+        const { data: entities } = this.state.entities;
 
         if (!entities) {
             return (
@@ -56,6 +72,20 @@ export default class PortfolioPage extends Component {
         return (
             <Fragment>
                 <NavigationLeft direction="about" />
+                <div className="filters">
+                    <span onClick={this.filterTags} data-id="SHOW ALL">SHOW ALL</span>                    
+                    {
+                        [...tags].map((tag, ind) => (
+                            <span 
+                                className="visible" 
+                                id={ind} 
+                                key={ind} 
+                                data-id={tag} 
+                                onClick={this.filterTags}
+                            >{tag}</span>
+                        ))
+                    }
+                </div>
                 {                    
                     entities.map(entity => (                     
                         <a href={entity.address} target="_blank" key={entity.id} id={entity.id}>
@@ -63,9 +93,9 @@ export default class PortfolioPage extends Component {
                                 <div className="tags">
                                     {
                                         entity.tags.map((tag, ind) => (
-                                                <span id={ind} key={ind}>{tag}</span>
-                                                ))
-                                            }
+                                            <span id={ind} key={ind}>{tag}</span>
+                                        ))
+                                    }
                                 </div>
                                 <img src={urls[entity.name]} alt={entity.name} />
                             </div>
