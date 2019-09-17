@@ -1,5 +1,14 @@
-@import './portfolio-media.scss';
-@import './spinner.scss';
+@media (max-width: 1023px) {
+    .media {
+        width: 70vw;
+    }
+}
+
+@media (min-width: 1024px) {
+    .media {
+        width: 25vw;
+    }
+}
 
 .media {
     background: #666;
@@ -84,26 +93,6 @@
     &.ar-16x9 img {
         width: auto;
         height: 100%;
-    }
-}
-
-div.filters {
-    display: flex;
-    flex-flow: row wrap;
-    max-width: 41em;
-    margin: 1em;
-
-    span {
-        font-size: 0.6em;
-        margin: 0.5em;
-        padding: 0.2em;
-        background: orangered;
-        color: #fff;
-        min-width: 4.5em;
-        opacity: 1;
-        text-align: center;
-        box-shadow: 2px 2px 0 darkgray;
-        cursor: pointer;
     }
 }
 

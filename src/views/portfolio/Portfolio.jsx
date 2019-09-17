@@ -1,9 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import NavigationLeft from '../../components/common/Navigation-left/Navigation-left';
 import NavigationRight from '../../components/common/Navigation-right/Navigation-right';
+import MediaComponent from './media/Media';
+import FiltersComponent from './filters/Filters';
 import portfolioService from '../../services/portfolio-service';
-import './portfolio.scss';
 import ctx from '../../services/ctx-service';
+import './spinner.scss';
 
 export default class PortfolioPage extends Component {
     constructor(props) {
@@ -14,21 +16,29 @@ export default class PortfolioPage extends Component {
             entities: [],
             urls: {...ctx},
             tags: null,
+            isActive: ['SHOW ALL'],
         }
 
         this.filterTags = this.filterTags.bind(this);
     }
 
-    filterTags(event) {
+    filterTags(event) {        
         const filter = event.target.dataset.id;
-        const data = Object.values(this.state.data)
-            .reduce((acc, curr) => Object.values(curr)
+        let data = Object.values(this.state.data)
+        .reduce((acc, curr) => Object.values(curr)
                 .filter(tag => tag.tags.includes(filter))
-            , []);
-        
+                , []);
+
+                if (data.length === 0) {
+            data = this.state.data.data;
+        }
+       
         this.setState({
-            data
-        });
+            entities: {
+                data
+            },
+            isActive: [filter],
+        })
     }
 
     componentDidMount() {
@@ -60,48 +70,19 @@ export default class PortfolioPage extends Component {
             return (
                 <Fragment>
                     <NavigationLeft direction="about" />
-                    <div className="spinner"></div>                   
+                    <div className="spinner"></div>
                     <NavigationRight direction="education" />
                 </Fragment>
             )
         }
 
-        const { urls } = this.state;
-        const { tags } = this.state;
+        const { urls, tags } = this.state;
 
         return (
             <Fragment>
                 <NavigationLeft direction="about" />
-                <div className="filters">
-                    <span onClick={this.filterTags} data-id="SHOW ALL">SHOW ALL</span>                    
-                    {
-                        [...tags].map((tag, ind) => (
-                            <span 
-                                className="visible" 
-                                id={ind} 
-                                key={ind} 
-                                data-id={tag} 
-                                onClick={this.filterTags}
-                            >{tag}</span>
-                        ))
-                    }
-                </div>
-                {                    
-                    entities.map(entity => (                     
-                        <a href={entity.address} target="_blank" key={entity.id} id={entity.id}>
-                            <div className="media ar-9x16" >
-                                <div className="tags">
-                                    {
-                                        entity.tags.map((tag, ind) => (
-                                            <span id={ind} key={ind}>{tag}</span>
-                                        ))
-                                    }
-                                </div>
-                                <img src={urls[entity.name]} alt={entity.name} />
-                            </div>
-                        </a>
-                    ))
-                }
+                <FiltersComponent tags={tags} filterTags={this.filterTags} isActive={this.state.isActive} />
+                <MediaComponent entities={entities} urls={urls} />
                 <NavigationRight direction="education" />
             </Fragment>
         )
