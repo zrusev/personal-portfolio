@@ -50,7 +50,8 @@ export default class PortfolioPage extends Component {
                         }, [])
                     .reduce((acc, curr) => {
                             return acc.concat(curr)
-                        }, []));
+                        }, [])
+                    .sort());
 
                 this.setState({
                     data,
