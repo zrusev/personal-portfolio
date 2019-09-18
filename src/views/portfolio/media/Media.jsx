@@ -7,6 +7,7 @@ export default (props) => {
     return (
         entities.map(entity => (                     
             <a href={entity.address} target="_blank" key={entity.id} id={entity.id}>
+                <div className="title">{entity.name}</div>                
                 <div className="media ar-9x16" >
                     <div className="tags">
                         {
