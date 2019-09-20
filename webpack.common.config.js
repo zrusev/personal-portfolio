@@ -65,9 +65,7 @@ module.exports = {
                             name: '[name].[ext]',
                             context: path.resolve(__dirname, "src/assets/"),
                             outputPath: 'fonts',
-                            publicPath: process.env.NODE_ENV === 'production' 
-                                ? '../../' 
-                                : '/fonts',
+                            publicPath: '/fonts',
                             useRelativePaths: true,
                         }
                     }
