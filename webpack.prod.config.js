@@ -121,10 +121,6 @@ module.exports = (env) => {
                 {
                     from: path.resolve(__dirname, 'src/assets/images'),
                     to: path.resolve(__dirname, 'dist/images')
-                },
-                {
-                    from: path.resolve(__dirname, 'src/assets/ssl'),
-                    to: path.resolve(__dirname, 'dist')
                 }
             ]),
         ]
