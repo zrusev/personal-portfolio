@@ -36,7 +36,7 @@ class MenuComponent extends Component {
                     <span></span>
                     <span></span>
                     <ul id="menu">
-                        <Link to="/about" onClick={this.handleClickEvent}><li>Home</li></Link>
+                        <Link to="/about" onClick={this.handleClickEvent}><li>About</li></Link>
                         <Link to="/portfolio" onClick={this.handleClickEvent}><li>Portfolio</li></Link>
                         <Link to="/experience" onClick={this.handleClickEvent}><li>Experience</li></Link>
                         <Link to="/education" onClick={this.handleClickEvent}><li>Education</li></Link>
