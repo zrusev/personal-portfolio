@@ -16,24 +16,31 @@ export default () =>  {
                     <li>
                         <strong className="title">Mar 2019</strong>
                             <span className="content">
-                                <strong><i>JavaScript WEB DEVELOPER</i></strong>   
-                                <br />
+                                <a href="https://softuni.bg/certificates/details/66724/328878e2" target="_blank">
+                                    <div className="position">
+                                        JAVASCRIPT WEB DEVELOPER
+                                    </div>
+                                </a>
                                 <strong>Software University SoftUni</strong>
                             </span>
                     </li>
                     <li>
                         <strong className="title">Sept 2018</strong>
                         <span className="content">
-                            <strong><i>C# WEB DEVELOPER</i></strong>   
-                            <br />
+                            <a href="https://softuni.bg/certificates/details/66757/666b620c" target="_blank">
+                                <div className="position">
+                                    C# WEB DEVELOPER
+                                </div>
+                            </a>
                             <strong>Software University SoftUni</strong>
                         </span>
                     </li>
                     <li>
                         <strong className="title">Sept 2013</strong>
                         <span className="content">
-                            <strong><i>MASTER OF LAW</i></strong>
-                            <br />
+                            <div className="position">
+                                MASTER OF LAW
+                            </div>
                             <strong>UNWE Sofia</strong>
                             <br />
                             Acquired legal capacity
@@ -42,8 +49,9 @@ export default () =>  {
                     <li>
                         <strong className="title">May 2007</strong>
                         <span className="content">
-                            <strong><i>SPANISH LANGUAGE</i></strong>
-                            <br />
+                            <div className="position">
+                                SPANISH LANGUAGE
+                            </div>
                             <strong><b>School of Roman Languages G. S. Rakovski Bourgas</b></strong>
                         </span>
                     </li>    

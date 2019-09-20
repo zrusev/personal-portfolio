@@ -74,8 +74,13 @@ ol.education {
         
         strong.title {
             display: block;
+            margin: 0;
             margin-bottom: 0.3em;
         }
+    }
+
+    div.position {
+        color: orangered;
     }
 }
 
