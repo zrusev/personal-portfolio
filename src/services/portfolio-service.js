@@ -7,13 +7,13 @@ export default {
         {
           id: 0,
           name: 'swapp',
-          tags: ['ReactJS', 'Styled-components', 'Graphql', 'Apollo', 'Jest', 'Enzyme', 'Netlify', 'CI', 'Husky'],
+          tags: ['ReactJS', 'Styled-components', 'Graphql', 'Apollo', 'Jest', 'Enzyme', 'Netlify', 'CI', 'Husky', 'CSS Animations', 'CSS Transitions', 'JWT'],
           address: 'https://github.com/zrusev/swapp',
         },
         {
           id: 1,
           name: 'personal-portfolio',
-          tags: ['ReactJS', 'HTML', 'SASS', 'NodeJS', 'Webpack', 'BabelJS', 'CSS Animations', 'CSS Transitions'],
+          tags: ['ReactJS', 'SASS', 'NodeJS', 'Webpack', 'BabelJS', 'Heroku', 'CI', 'CSS Animations', 'CSS Transitions'],
           address: 'https://github.com/zrusev/personal-portfolio',
         },
         {
