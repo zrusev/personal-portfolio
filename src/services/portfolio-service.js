@@ -6,15 +6,15 @@ export default {
       data: [
         {
           id: 0,
-          name: 'ddd-architecture',
-          tags: ['ASP.NET Core', 'EF Core', 'AutoМapper', 'JWT', 'Domain-driven design', 'FluentValidation', 'MediatR', 'MailKit'],
-          address: 'https://github.com/zrusev/ddd-architecture',
+          name: 'microservices-architecture',
+          tags: ['K8S', 'Docker', 'Jenkins', 'CI', 'ASP.NET Core', 'EF Core', 'Refit', 'MassTransit', 'RabbitMQ', 'Handfire', 'SignalR', 'ReactJS', 'Redux', 'Material UI'],
+          address: 'https://github.com/zrusev/microservices-architecture',
         },
         {
           id: 1,
-          name: 'microservices-architecture',
-          tags: ['ASP.NET Core', 'EF Core', 'Refit', 'MassTransit', 'RabbitMQ', 'Handfire', 'SignalR', 'AutoМapper', 'JWT', 'ReactJS', 'Redux', 'Material UI'],
-          address: 'https://github.com/zrusev/microservices-architecture',
+          name: 'ddd-architecture',
+          tags: ['ASP.NET Core', 'EF Core', 'AutoМapper', 'JWT', 'Domain-driven design', 'FluentValidation', 'MediatR', 'MailKit'],
+          address: 'https://github.com/zrusev/ddd-architecture',
         },
         {
           id: 2,
