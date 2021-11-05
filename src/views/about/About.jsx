@@ -51,7 +51,10 @@ class AboutPage extends Component {
                             Feel free to take a look at my latest projects on the web <Link to="/portfolio" style={{ textDecoration: 'none' }}><strong>portfolio</strong></Link> page.
                     </div>
                     <div className='avatar-wrapper'>
-                        <img src={avatar} alt="avatar image" />
+                        <img src={process.env.NODE_ENV === 'production'
+                            ? avatar.replace('../../', 'images/')
+                            : avatar
+                        } alt="avatar image" />
                     </div>
                 </div>
                 <div className="social">
