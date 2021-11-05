@@ -9,12 +9,9 @@ main div.container div.text-container {
     position: relative;
     min-width: 60vw;
 
+    &:hover,
     &.animate {
-        animation: text-container-animation 1s forwards;
-    }
-
-    &:hover {
-        transform: translateY(-0.3em);
+        transform: translateY(-0.05em);
         animation: text-container-border 3s forwards;
         transition: transform 0.5s ease;
     }
@@ -23,7 +20,8 @@ main div.container div.text-container {
         color: rgb(182, 182, 182);
     }
 
-    &:hover h3 strong {
+    &:hover,
+    &.animate h3 strong {
         transition: color 0.3s ease-in;
         color: orangered;
     }
@@ -32,7 +30,8 @@ main div.container div.text-container {
         color: rgb(110, 110, 110);
     }
 
-    &:hover strong {
+    &:hover,
+    &.animate strong {
         transition: color 0.3s ease-in;
         color: orangered;
     }
