@@ -8,8 +8,8 @@
     "npm": "6.x"
   },
   "scripts": {
-    "dev": "SET NODE_ENV=development & npx webpack-dev-server --config webpack.dev.config.js --open --env=development --history-api-fallback",
-    "build": "SET NODE_ENV=production & npx webpack --config webpack.prod.config.js --env=production",
+    "dev": "cross-env NODE_ENV=development npx webpack-dev-server --config webpack.dev.config.js --open --env=development --history-api-fallback",
+    "build": "cross-env NODE_ENV=production npx webpack --config webpack.prod.config.js --env=production",
     "heroku-postbuild": "npx webpack --config webpack.prod.config.js --env=production",
     "start": "serve -s dist"
   },
@@ -35,6 +35,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.0.4",
     "core-js": "^3.2.1",
+    "cross-env": "^7.0.3",
     "css-loader": "^3.2.0",
     "cssnano": "^4.1.10",
     "cssnano-preset-advanced": "^4.0.7",

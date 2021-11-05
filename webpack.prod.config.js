@@ -14,7 +14,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = (env) => {
     console.log(`Environment: ${env}; NODE_ENV: ${process.env.NODE_ENV}`);
-    
+
     return smp.wrap(merge(common, {
         mode: env,
         devtool: 'source-map',
@@ -29,7 +29,7 @@ module.exports = (env) => {
             // runtimeChunk: 'single',
             // moduleIds: 'hashed',
             minimize: true,
-            minimizer: [ 
+            minimizer: [
                 new TerserPlugin({
                     test: /\.js(\?.*)?$/i,
                     cache: true,
@@ -111,7 +111,7 @@ module.exports = (env) => {
         plugins: [
             new PurgecssPlugin({
                 paths: glob.sync(`${path.resolve(__dirname, 'src')}/**/*`, { nodir: true }),
-                whitelist: ['html', 'body', 'blockquote', 'form', 'option', 'select', 'table', 'textarea', 
+                whitelist: ['html', 'body', 'blockquote', 'form', 'option', 'select', 'table', 'textarea',
                             'animate-exit-done', 'animate-enter-done', 'media.ar-9x16', 'img', 'section-education']
             }),
             new MiniCssExtractPlugin({
@@ -121,6 +121,10 @@ module.exports = (env) => {
                 {
                     from: path.resolve(__dirname, 'src/assets/images'),
                     to: path.resolve(__dirname, 'dist/images')
+                },
+                {
+                    from: path.resolve(__dirname, 'public/redirects'),
+                    to: path.resolve(__dirname, 'dist')
                 }
             ]),
         ]
