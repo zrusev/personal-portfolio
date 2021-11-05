@@ -54,7 +54,7 @@ export default () =>  {
                             </div>
                             <strong><b>School of Roman Languages G. S. Rakovski Bourgas</b></strong>
                         </span>
-                    </li>    
+                    </li>
                 </ol>
             </section>
             <NavigationRight direction="experience" />
