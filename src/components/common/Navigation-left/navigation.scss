@@ -9,17 +9,17 @@ div.navigation {
     justify-content: center;
     align-items: center;
     color: rgb(182, 182, 182);
-    
+
     a {
         color: inherit;
         text-decoration: none;
     }
-    
+
     .fa {
         position: absolute;
         top: -0.4em;
     }
-    
+
     &:hover .fa {
         color: orangered;
         font-size: 8em;
@@ -28,18 +28,10 @@ div.navigation {
     }
 }
 
-/* 
-div.navigation-left:before {
-    display: block;
-    content: '';
-    width: 10em;
-    height: 10em;
-} */
-
 div.navigation-left {
     grid-area: navigation-left;
     left: 5em;
-    
+
     strong {
         position: absolute;
         top: 0.5em;
@@ -49,12 +41,20 @@ div.navigation-left {
         font-size: 0.5em;
         transition: all 0.1s ease-out;
     }
-    
+
     &:hover strong {
         visibility: visible;
         font-size: 1.2em;
         transform: translate(1em, -0.1em);
         transition: all 0.3s ease-in;
+    }
+
+    &:hover em:before {
+        transform: rotate(30deg);
+     }
+
+    &:hover em:after {
+        transform: rotate(150deg);
     }
 }
 
@@ -68,74 +68,9 @@ em {
     transition: transform 0.2s ease-out 0.2s;
 }
 
-.navigation em:hover:before, 
+.navigation em:hover:before,
 .navigation em:hover:after {
-    transform: translate3d(0, 0, 0); 
-}
-
-.navigation-right em:hover:before {
-    transform: rotate(-30deg);
- }
-
-.navigation-right em:hover:after {
-    transform: rotate(-150deg);
-}
-
-.navigation-right em:before {
-    top: -50%;
-    transform: rotate(-45deg);
-    content: '';
-    position: absolute;
-    right: 0;
-    height: 100%;
-    width: 2px;
-    background-color: rgb(182, 182, 182);
-    transform-origin: 50% 100% 0;
-    transition: transform 0.16s ease-out;
-}
-
-.navigation-right em:after {
-    top: calc(-50% + -1px);
-    transform: rotate(-135deg);
-    content: " ";
-    position: absolute;
-    right: 0;
-    height: 100%;
-    width: 2px;
-    background-color: rgb(182, 182, 182);
-    transform-origin: 50% 100% 0;
-    transition: transform 0.16s ease-out;
-} 
-
-.navigation-right span {
-    right: calc(50% + 5px);
-    transform: translate3d(30px, 0, 0);
-    display: inline-block;
-    color: orangered;
-    position: absolute;
-    opacity: 0;
-    white-space: nowrap;
-    top: calc(50% - 1em);
-    height: 30px;
-    padding: 0 10px;
-    text-transform: lowercase;
-    font-size: 1.15em;
-    line-height: 1.7em;
-    transition: opacity 0.1s ease 0.125s,
-                transform 0.3s cubic-bezier(0, 0, 0, 1) 0.125s;
-}
-
-.navigation-right:hover span {
-    opacity: 1;
     transform: translate3d(0, 0, 0);
-}
-
-.navigation-left em:hover:before {
-    transform: rotate(30deg);
- }
-
-.navigation-left em:hover:after {
-    transform: rotate(150deg);
 }
 
 .navigation-left em:before {
@@ -164,7 +99,7 @@ em {
     background-color: rgb(182, 182, 182);
     transform-origin: 50% 100% 0;
     transition: transform 0.16s ease-out;
-} 
+}
 
 .navigation-left span {
     left: calc(50% + 5px);

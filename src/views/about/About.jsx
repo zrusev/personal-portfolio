@@ -7,6 +7,7 @@ import NavigationRight from '../../components/common/Navigation-right/Navigation
 // import linkedin from '../../assets/images/linkedin.png';
 // import facebook from '../../assets/images/facebook.png';
 import './about.scss';
+import avatar from '../../assets/images/avatar.jpg';
 
 class AboutPage extends Component {
     constructor(props) {
@@ -17,7 +18,7 @@ class AboutPage extends Component {
             isVisible: false
         }
     }
-    
+
     componentDidMount() {
         // dirty hack but I'm pressed for time
         window.clearTimeout(this.timeout);
@@ -35,18 +36,23 @@ class AboutPage extends Component {
     }
 
     render() {
-        const animate = this.state.hasBeenAnimated 
-                        ? '' 
+        const animate = this.state.hasBeenAnimated
+                        ? ''
                         : 'animate';
 
         return (
             <Fragment>
                 <NavigationLeft direction="experience" />
                 <div className={'text-container ' + animate}>
-                    <h3>Hello, my name is <strong>Zlatko Rusev</strong>.</h3>
-                        I am a full-stack web developer and technology enthusiast. 
-                        <br/>
-                        Feel free to take a look at my latest projects on the web <Link to="/portfolio" style={{ textDecoration: 'none' }}><strong>portfolio</strong></Link> page.
+                    <div>
+                        <h3>Hello, my name is <strong>Zlatko Rusev</strong>.</h3>
+                            I am a full-stack web developer and technology enthusiast.
+                            <br/>
+                            Feel free to take a look at my latest projects on the web <Link to="/portfolio" style={{ textDecoration: 'none' }}><strong>portfolio</strong></Link> page.
+                    </div>
+                    <div className='avatar-wrapper'>
+                        <img src={avatar} alt="avatar image" />
+                    </div>
                 </div>
                 <div className="social">
                     <ul className={this.state.isVisible ? 'visible' : ''}>
