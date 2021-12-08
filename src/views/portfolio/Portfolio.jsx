@@ -22,7 +22,7 @@ export default class PortfolioPage extends Component {
         this.filterTags = this.filterTags.bind(this);
     }
 
-    filterTags(event) {        
+    filterTags(event) {
         const filter = event.target.dataset.id;
         let data = Object.values(this.state.data)
         .reduce((acc, curr) => Object.values(curr)
@@ -32,7 +32,7 @@ export default class PortfolioPage extends Component {
                 if (data.length === 0) {
             data = this.state.data.data;
         }
-       
+
         this.setState({
             entities: {
                 data
@@ -60,7 +60,7 @@ export default class PortfolioPage extends Component {
                 });
             })
             .catch(error => {
-                console.log(error);                
+                console.log(error);
             });
     }
 
@@ -84,7 +84,7 @@ export default class PortfolioPage extends Component {
                 <NavigationLeft direction="about" />
                 <FiltersComponent tags={tags} filterTags={this.filterTags} isActive={this.state.isActive} />
                 <MediaComponent entities={entities} urls={urls} />
-                <NavigationRight direction="education" />
+                <NavigationRight direction="skills" />
             </Fragment>
         )
     }

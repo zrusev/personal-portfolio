@@ -2,10 +2,6 @@ import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import NavigationLeft from '../../components/common/Navigation-left/Navigation-left';
 import NavigationRight from '../../components/common/Navigation-right/Navigation-right';
-// import envelope from '../../assets/images/message-closed-envelope.png';
-// import github from '../../assets/images/github.png';
-// import linkedin from '../../assets/images/linkedin.png';
-// import facebook from '../../assets/images/facebook.png';
 import './about.scss';
 import avatar from '../../assets/images/avatar.jpg';
 
@@ -20,7 +16,6 @@ class AboutPage extends Component {
     }
 
     componentDidMount() {
-        // dirty hack but I'm pressed for time
         window.clearTimeout(this.timeout);
 
         this.timeout = window.setTimeout(() => {

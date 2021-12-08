@@ -7,7 +7,7 @@ import './education.scss';
 export default () =>  {
     return (
         <Fragment>
-            <NavigationLeft direction="portfolio" />
+            <NavigationLeft direction="skills" />
             <section className={`section section-${isMobile ? 'experience' : 'education'}`}>
                 <header>
                     <h3>Academic background</h3>

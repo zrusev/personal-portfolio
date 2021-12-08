@@ -12,7 +12,7 @@ class MenuComponent extends Component {
         }
     }
 
-    componentDidUpdate(prevState) {        
+    componentDidUpdate(prevState) {
         if (this.props.isChecked !== prevState.isChecked) {
             this.setState({
                 isChecked: this.props.isChecked
@@ -38,6 +38,7 @@ class MenuComponent extends Component {
                     <ul id="menu">
                         <Link to="/about" onClick={this.handleClickEvent}><li>About</li></Link>
                         <Link to="/portfolio" onClick={this.handleClickEvent}><li>Portfolio</li></Link>
+                        <Link to="/skills" onClick={this.handleClickEvent}><li>Skills</li></Link>
                         <Link to="/experience" onClick={this.handleClickEvent}><li>Experience</li></Link>
                         <Link to="/education" onClick={this.handleClickEvent}><li>Education</li></Link>
                     </ul>
@@ -47,7 +48,7 @@ class MenuComponent extends Component {
     }
 }
 
-export default (props) => {    
+export default (props) => {
     return (
         <MenuConsumer>
             {
