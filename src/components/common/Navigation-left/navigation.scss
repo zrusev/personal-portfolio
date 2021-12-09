@@ -49,11 +49,13 @@ div.navigation-left {
         transition: all 0.3s ease-in;
     }
 
-    &:hover em:before {
+    &:hover em:before,
+    &.flag em:before {
         transform: rotate(30deg);
-     }
+    }
 
-    &:hover em:after {
+    &:hover em:after,
+    &.flag em:after {
         transform: rotate(150deg);
     }
 }
@@ -119,7 +121,8 @@ em {
                 transform 0.3s cubic-bezier(0,0,0,1) 0.125s;
 }
 
-.navigation-left:hover span {
+.navigation-left:hover span,
+.flag {
     opacity: 1;
     transform: translate3d(0, 0, 0);
 }

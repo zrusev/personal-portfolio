@@ -1,28 +1,27 @@
 export default () => Promise.resolve({
-    data: [
-        {
+    data: [{
             id: 0,
-            name: '.Net Core'
-        },
-        {
+            name: 'C#',
+            description: '.Net Core',
+        }, {
             id: 1,
-            name: 'JavaScript'
-        },
-        {
+            name: 'JavaScript',
+            description: 'ReactJS',
+        }, {
             id: 2,
-            name: 'SQL Server'
-        },
-        {
+            name: 'SQL Server',
+            description: 'SQL Server',
+        }, {
             id: 3,
-            name: 'VBA'
-        },
-        {
+            name: 'VBA',
+            description: 'VBA',
+        }, {
             id: 4,
-            name: 'PowerBI'
-        },
-        {
+            name: 'PowerBI',
+            description: 'Power Automate',
+        }, {
             id: 5,
-            name: 'Python'
-        }
-    ]
+            name: 'Python',
+            description: 'Pandas, NumPy',
+        }]
 })

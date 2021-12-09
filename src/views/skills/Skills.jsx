@@ -9,19 +9,28 @@ export default () => {
     const [skills, setSkills] = useState([]);
     const itemsRef = useRef([]);
 
+    const closeAllOpenItems = (id) => itemsRef.current
+        .forEach((item, i) => { //side effect used purposely
+            if(item.id !== id + '') {
+                itemsRef.current[item.id].className = item.className.replace('open', 'closed');
+            }
+        });
+
     const clickHandler = (id) => {
         const current = itemsRef.current[id].className;
 
-        if(current.indexOf('open') >  -1) {
+        if(current.indexOf('open') > -1) {
             itemsRef.current[id].className = current.replace('open', 'closed');
             return;
         }
 
-        if(current.indexOf('closed') >  -1) {
+        if(current.indexOf('closed') > -1) {
+            closeAllOpenItems(id);
             itemsRef.current[id].className = current.replace('closed', 'open');
             return;
         }
 
+        closeAllOpenItems(id);
         itemsRef.current[id].className = current.replace('animated', 'open');
     };
 
@@ -56,15 +65,21 @@ export default () => {
             <div className='media-container'>
                 <div className='box'>
                     {
-                        skills.map(skill => (
+                        skills.map((skill, i) => (
                             <div
                                 id={skill.id}
                                 key={skill.id}
                                 ref={el => itemsRef.current[skill.id] = el}
-                                className={'media-skill animated' + (isVisible ? ' visible' : '')}
+                                className={
+                                    'media-skill' +
+                                    ' animated' +
+                                    (isVisible ? ' visible' : '') +
+                                    (i % 2 === 0 ? ' left' : ' right')
+                                }
                                 onClick={() => clickHandler(skill.id)}
                             >
-                                {skill.name}
+                                <div className='front'>{skill.name}</div>
+                                <div className='back'>{skill.description}</div>
                             </div>
                         ))
                     }

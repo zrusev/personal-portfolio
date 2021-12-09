@@ -42,18 +42,20 @@ div.navigation-right {
         transition: all 0.1s ease-out;
     }
 
-    &:hover strong {
+    &:hover strong  {
         visibility: visible;
         font-size: 1.2em;
         transform: translate(-0.8em, -0.2em);
         transition: all 0.3s ease-in;
     }
 
-    &:hover em:before {
+    &:hover em:before,
+    &.flag em:before {
         transform: rotate(-30deg);
      }
 
-     &:hover em:after {
+     &:hover em:after,
+     &.flag em:after {
         transform: rotate(-150deg);
     }
 }
@@ -117,7 +119,8 @@ em {
                 transform 0.3s cubic-bezier(0, 0, 0, 1) 0.125s;
 }
 
-.navigation-right:hover span {
+.navigation-right:hover span,
+.flag span {
     opacity: 1;
     transform: translate3d(0, 0, 0);
 }

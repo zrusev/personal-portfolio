@@ -31,7 +31,7 @@ div.media-skill {
     opacity: 0;
     color: white;
     min-width: 10vw;
-    margin: 0.1em;
+    margin: 0.3em;
     font-size: 0.8em;
 
     &.visible {
@@ -43,7 +43,7 @@ div.media-skill {
         background-color: orangered;
         width: 10em;
         overflow: hidden;
-        box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+        box-shadow: 0.02em 0.02em 0 0.02em white;
         transition: opacity 0.3s ease;
         cursor: pointer;
 
@@ -53,6 +53,10 @@ div.media-skill {
                 box-shadow: 0 0 0.3em white;
             }
         }
+    }
+
+    &.visible div.back {
+        display: none;
     }
 
     &.animated {
@@ -67,17 +71,43 @@ div.media-skill {
     }
 
     &.open {
-        margin: 0.5em 0;
         padding: 1em 0;
         box-shadow: none !important;
-        animation: skill-open-animation 0.2s forwards ease-in-out;
-        transition-delay: 0.2s;
+
+        &.left {
+            animation: skill-open-animation-left 0.2s forwards ease-in-out;
+            transition-delay: 0.2s;
+        }
+
+        &.right {
+            animation: skill-open-animation-right 0.2s forwards ease-in-out;
+            transition-delay: 0.2s;
+        }
+    }
+
+    &.open div.front {
+        display: none;
+    }
+
+    &.open div.back {
+        display: block;
+        margin-left: 1em;
+        margin-right: 1em;
+        transform: rotateY(180deg);
     }
 
     &.closed {
-        margin: 0.1em;
-        animation: skill-closed-animation 0.2s forwards ease-in-out;
-        transition-delay: 0.2s;
+        margin: 0.3em;
+
+        &.left {
+            animation: skill-closed-animation-left 0.2s forwards ease-in-out;
+            transition-delay: 0.2s;
+        }
+
+        &.right {
+            animation: skill-closed-animation-right 0.2s forwards ease-in-out;
+            transition-delay: 0.2s;
+        }
     }
 }
 
@@ -87,12 +117,22 @@ div.media-skill {
     100%   { transform: translate(0, 0); }
 }
 
-@keyframes skill-open-animation {
+@keyframes skill-open-animation-left {
     0%   { transform: translate(0, 0); }
     100%   { transform: translateX(10em) rotateY(180deg); }
 }
 
-@keyframes skill-closed-animation {
+@keyframes skill-open-animation-right {
+    0%   { transform: translate(0, 0); }
+    100%   { transform: translateX(-10em) rotateY(180deg); }
+}
+
+@keyframes skill-closed-animation-left {
     0%   { transform: translateX(10em); }
+    100%   { transform: translateX(0, 0); }
+}
+
+@keyframes skill-closed-animation-right {
+    0%   { transform: translateX(-10em); }
     100%   { transform: translateX(0, 0); }
 }
