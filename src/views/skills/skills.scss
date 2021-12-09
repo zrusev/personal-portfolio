@@ -44,27 +44,40 @@ div.media-skill {
         width: 10em;
         overflow: hidden;
         box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
-        animation: text-container-animation 1s forwards ease-in-out;
-        animation-iteration-count: 1;
         transition: opacity 0.3s ease;
         cursor: pointer;
+
+        @for $i from 1 through 6 {
+            &:nth-last-child(#{$i}):hover {
+                transition: color 0.3s ease-in;
+                box-shadow: 0 0 0.3em white;
+            }
+        }
+    }
+
+    &.animated {
+        animation: text-container-animation 1s forwards ease-in-out;
 
         @for $i from 1 through 6 {
             &:nth-last-child(#{$i}) {
                 animation-delay: $i * 0.2s;
                 transition-delay: $i * 0.2s;
             }
-
-            &:nth-last-child(#{$i}):hover {
-                transition: color 0.3s ease-in;
-                color: black;
-            }
         }
+    }
 
-        &.open {
-            animation: skill-open-animation 1s forwards ease-in-out;
-            animation-iteration-count: 1;
-        }
+    &.open {
+        margin: 0.5em 0;
+        padding: 1em 0;
+        box-shadow: none !important;
+        animation: skill-open-animation 0.2s forwards ease-in-out;
+        transition-delay: 0.2s;
+    }
+
+    &.closed {
+        margin: 0.1em;
+        animation: skill-closed-animation 0.2s forwards ease-in-out;
+        transition-delay: 0.2s;
     }
 }
 
@@ -76,5 +89,10 @@ div.media-skill {
 
 @keyframes skill-open-animation {
     0%   { transform: translate(0, 0); }
-    100%   { transform: translateX(10em); }
+    100%   { transform: translateX(10em) rotateY(180deg); }
+}
+
+@keyframes skill-closed-animation {
+    0%   { transform: translateX(10em); }
+    100%   { transform: translateX(0, 0); }
 }
