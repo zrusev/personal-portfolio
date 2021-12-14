@@ -17,7 +17,10 @@ export default (props) => {
     }, [])
 
     return (
-        <div className={"navigation navigation-left" + (flag ? ' flag': '')}>
+        <div
+            className={"navigation navigation-left" + (flag ? ' flag': '')}
+            title='Use left arrow key to navigate'
+        >
             <KeyboardEventHandler
                 handleKeys={['left']}
                 onKeyEvent={(key, e) => {
@@ -25,7 +28,7 @@ export default (props) => {
                     timeoutID();
                 }} />
             <Link to={`/${props.direction}`}>
-                <span title='Use left arrow key to navigate'>{props.direction}</span>
+                <span>{props.direction}</span>
                 <em></em>
             </Link>
         </div>
