@@ -7,17 +7,18 @@ export default (props) => {
     return (
         <Fragment>
             <div className="filters">
-                <span className={isActive.includes('SHOW ALL') ? 'active' : ''} 
+                <span className={isActive.includes('SHOW ALL') ? 'active' : ''}
                       onClick={filterTags}
-                      data-id="SHOW ALL">SHOW ALL</span>                    
+                      data-id="SHOW ALL">SHOW ALL</span>
                 {
                     [...tags].map((tag, ind) => (
-                        <span  
+                        <span
                             className={isActive.includes(tag) ? 'active' : ''}
-                            id={ind} 
-                            key={ind} 
-                            data-id={tag} 
+                            id={ind}
+                            key={ind}
+                            data-id={tag}
                             onClick={filterTags}
+                            title='Click to filter'
                         >{tag}</span>
                     ))
                 }

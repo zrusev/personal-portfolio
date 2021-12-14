@@ -76,6 +76,7 @@ export default () => {
                                     (isVisible ? ' visible' : '') +
                                     (i % 2 === 0 ? ' left' : ' right')
                                 }
+                                title='Click to reveal'
                                 onClick={() => clickHandler(skill.id)}
                             >
                                 <div className='front'>{skill.name}</div>

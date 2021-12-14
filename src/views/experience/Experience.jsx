@@ -24,11 +24,19 @@ export default () => {
                             </div>
                             <div className="details">
                                 <span>
-                                    [ Successfully tranferred an inhouse data gathering solution to internal content management system. ]
+                                    [ Successfully tranferred an in-house data gathering solution to internal content management system. ]
+                                </span>
+                                <br />
+                                <span>
+                                    [ Responsible for development and support of a data collection tool for gathering the basic KPIs within the center, data management and dashboard reporting. ]
                                 </span>
                                 <br />
                                 <span>
                                     [ Responsible for maintanance of internal capacity model solution. ]
+                                </span>
+                                <br />
+                                <span>
+                                    [ SQL Server database support and maintenance on a regular basis. ]
                                 </span>
                             </div>
                         </span>
@@ -38,7 +46,7 @@ export default () => {
                         <strong className="title">May 2017 – Jan 2021</strong>
                         <span className="content">
                             <a href="https://www.aig.com" target="_blank">
-                                <div className="company">AIG CoE</div>
+                                <div className="company">AIG Center of Excellence</div>
                             </a>
                             <div className="position">Development Support Analyst</div>
                             <div className="position-description">
@@ -75,7 +83,7 @@ export default () => {
                         <strong className="title">Sept 2016 – May 2017</strong>
                         <span className="content">
                             <a href="https://www.aig.com" target="_blank">
-                                <div className="company">AIG CoE</div>
+                                <div className="company">AIG Center of Excellence</div>
                             </a>
                             <div className="position">Reporting Administrator</div>
                             <div className="position-description">
@@ -96,7 +104,7 @@ export default () => {
                         <strong className="title">Sept 2014 - Sept 2016</strong>
                         <span className="content">
                             <a href="https://www.aig.com" target="_blank">
-                                <div className="company">AIG CoE</div>
+                                <div className="company">AIG Center of Excellence</div>
                             </a>
                             <div className="position">Operations Process Administrator with Spanish language</div>
                             <div className="position-description">

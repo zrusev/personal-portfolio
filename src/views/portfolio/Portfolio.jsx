@@ -83,7 +83,7 @@ export default class PortfolioPage extends Component {
             <Fragment>
                 <NavigationLeft direction="about" />
                 <FiltersComponent tags={tags} filterTags={this.filterTags} isActive={this.state.isActive} />
-                <MediaComponent entities={entities} urls={urls} />
+                <MediaComponent entities={entities} urls={urls}/>
                 <NavigationRight direction="skills" />
             </Fragment>
         )

@@ -25,7 +25,7 @@ export default (props) => {
                     timeoutID();
                 }} />
             <Link to={`/${props.direction}`}>
-                <span>{props.direction}</span>
+                <span title='Use right arrow key to navigate'>{props.direction}</span>
                 <em></em>
             </Link>
         </div>

@@ -15,6 +15,11 @@ div.filters {
         text-align: center;
         box-shadow: 1px 1px 0 darkgray;
         cursor: pointer;
+
+        &:hover {
+            transition: color 0.3s ease-in;
+            box-shadow: 0 0 0.3em white;
+        }
     }
 
     .active {
