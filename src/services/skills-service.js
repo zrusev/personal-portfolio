@@ -10,21 +10,25 @@ export default () => Promise.resolve({
         }, {
             id: 2,
             name: 'SQL Server',
-            description: 'EF Core',
+            description: 'EF Core, Dapper, T-SQL',
         }, {
             id: 3,
+            name: 'CI/CD',
+            description: 'Jenkins, GIT'
+        } , {
+            id: 4,
             name: 'CSS',
             description: 'SCSS, SASS',
         },{
-            id: 4,
+            id: 5,
             name: 'VBA',
             description: 'VBA, ADODB',
         }, {
-            id: 5,
+            id: 6,
             name: 'PowerBI',
             description: 'Power Automate',
         }, {
-            id: 6,
+            id: 7,
             name: 'Python',
             description: 'Pandas, NumPy',
         }]
