@@ -32,11 +32,15 @@ export default () => {
                                 </span>
                                 <br />
                                 <span>
-                                    [ Responsible for maintanance of internal capacity model solution. ]
+                                    [ Responsible for producing and maintenance of internal capacity model solution. ]
                                 </span>
                                 <br />
                                 <span>
-                                    [ SQL Server database support and maintenance on a regular basis. ]
+                                    [ Data warehouse management. ]
+                                </span>
+                                <br />
+                                <span>
+                                    [ SQL Server database support and maintenance on a regular basis. Building procedures, functions & table expressions; analyzing execution models. ]
                                 </span>
                             </div>
                         </span>
