@@ -8,7 +8,7 @@ const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 
 module.exports = (env) => {
     console.log(`Environment: ${env}; NODE_ENV: ${process.env.NODE_ENV}`);
-    
+
     return merge(common, {
         mode: env,
         devtool: 'cheap-eval-source-map',

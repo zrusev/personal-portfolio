@@ -40,7 +40,7 @@ div.hamburger {
 .line {
   display: block;
   width: $toggle-size;
-  padding: $toggle-line-size/2;
+  padding: calc($toggle-line-size / 2);
 
   &:after {
     content: "";
