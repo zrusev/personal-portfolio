@@ -2,11 +2,11 @@ export default () => Promise.resolve({
     data: [{
             id: 0,
             name: 'C#',
-            description: '.Net Core, Docker, Microservices, DDD'
+            description: '.Net Core, Microservices, DDD, Docker, K8s',
         }, {
             id: 1,
             name: 'JavaScript',
-            description: 'ReactJS, TypeScript, Redux, Webpack'
+            description: 'ReactJS, TypeScript, Redux, Webpack',
         }, {
             id: 2,
             name: 'CSS',
@@ -18,22 +18,22 @@ export default () => Promise.resolve({
         }, {
             id: 4,
             name: 'CI/CD',
-            description: 'Jenkins, GIT'
+            description: 'Jenkins, Git, Gitflow',
         }, {
             id: 5,
             name: 'Cloud',
-            description: 'AWS, Azure'
+            description: 'AWS',
         }, {
             id: 6,
             name: 'VBA',
             description: 'VBA, ADODB',
         }, {
             id: 7,
-            name: 'PowerBI',
-            description: 'Power Automate',
-        }, {
-            id: 8,
             name: 'Python',
             description: 'Pandas, NumPy',
+        }, {
+            id: 8,
+            name: 'Power Platform',
+            description: 'Power BI, Power Automate, SharePoint, MS Forms',
         }]
 })
