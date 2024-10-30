@@ -1,12 +1,12 @@
 .section-experience {
     padding: 2em 2em 0 2em;
-    
+
     &:hover div.details {
         max-height: 50em;
     }
-    
+
     header {
-        border-bottom: 2px solid #000; 
+        border-bottom: 2px solid #000;
         padding: 1em;
         margin-left: -1em;
         border-radius: 0.3em;
@@ -17,14 +17,14 @@
 
 ol.experience {
     border-left: 2px solid #000;
-    padding: 2em 0; 
-    
+    padding: 2em 0;
+
     li {
         display: block;
         list-style: none outside;
         padding-left: 2em;
         position: relative;
-        
+
         &:before {
             display: block;
             content: '';
@@ -38,10 +38,10 @@ ol.experience {
         }
 
         $list: rgb(75, 75, 75),
-               rgb(100, 100, 100), 
-               rgb(125, 125, 125), 
-               rgb(150, 150, 150), 
-               rgb(175, 175, 175), 
+               rgb(100, 100, 100),
+               rgb(125, 125, 125),
+               rgb(150, 150, 150),
+               rgb(175, 175, 175),
                rgb(225, 225, 225);
 
         @for $i from length($list)*-1 through -1 {
@@ -53,18 +53,18 @@ ol.experience {
                 background: nth($list, $i);
             }
         }
-    
+
         strong.title {
             display: block;
             margin: 0;
             margin-bottom: 0.3em;
-        }   
-        
+        }
+
         &:not(:first-child) {
             margin-top: 2em;
-        } 
+        }
     }
-    
+
     div.position {
         color: orangered;
     }
@@ -73,12 +73,44 @@ ol.experience {
         font-size: 0.8em;
     }
 
+    $icons: 'xlsx.svg',
+            'SQL.svg',
+            'python.svg',
+            'pandas.svg',
+            'numPy.svg',
+            'javaScript.svg',
+            'selenium.svg',
+            'mongoDB.svg',
+            'power-bi.svg',
+            'power_Automate.svg',
+            'power_Query.svg',
+            'sharePoint.svg',
+            'HTML5.svg',
+            'CSS3.svg',
+            'xlsx.svg',
+            'cSharp.svg',
+            'javaScript.svg';
+
     div.details {
         transition: max-height 1s;
         overflow: hidden;
         max-height: 0;
         margin-top: 0.5em;
         font-size: 0.8em;
+
+        div.svg-social {
+            width: 25px;
+            height: 25px;
+            opacity: 1;
+            display: inline-block;
+            background-repeat: no-repeat;
+        }
+    }
+
+    @for $i from 1 through length($icons) {
+        div.svg-social:nth-of-type(#{$i}) {
+            background-image: url('../../assets/icons/' + nth($icons, $i));
+        }
     }
 }
 
@@ -93,7 +125,7 @@ ol.experience {
 
     ol.experience {
         margin-left: 50%;
-        
+
         li:nth-child(even) {
             width: 100%;
             margin-left: -100%;
@@ -101,7 +133,7 @@ ol.experience {
             text-align: right;
             margin-top: -2em;
         }
-        
+
         li:nth-child(even):before {
             left: initial;
             right: calc( (1em) / 2 * -1 );

@@ -18,30 +18,30 @@ export default () => {
                             <a href="https://www.accenture.com/us-en" target="_blank">
                                 <div className="company">Accenture Bulgaria</div>
                             </a>
-                            <div className="position">Business Process Svcs Senior Analyst</div>
+                            <div className="position">Senior Business Analyst</div>
                             <div className="position-description">
-                                Business Process Svcs Senior Analyst of Accenture Bulgaria works with business partners to support standard requests for ETL dataflow facilitation from data gathering to its consumption by clients.
+                                For the past several years, I've been developing a comprehensive data-gathering solution that streamlines data collection, enhances data quality, and supports informed decision-making across key business functions.
+                                <br />
+                                I am a skilled data specialist with expertise in automation, data management, and visualization, leveraging a variety of tools and technologies:
                             </div>
                             <div className="details">
-                                <span>
-                                    [ Successfully tranferred an in-house data gathering solution to internal content management system. ]
-                                </span>
+                                [ Data collection: Advanced VBA <div className="svg-social"></div> ]
                                 <br />
-                                <span>
-                                    [ Responsible for development and support of a data collection tool for gathering the basic KPIs within the center, data management and dashboard reporting. ]
-                                </span>
+                                [ Data storage and management: SQL <div className="svg-social"></div>, T-SQL ]
                                 <br />
-                                <span>
-                                    [ Responsible for producing and maintenance of internal capacity model solution. ]
-                                </span>
+                                [ CSM/KSMs aggregation: Python <div className="svg-social"></div>, Pandas <div className="svg-social"></div>, NumPy <div className="svg-social"></div> ]
                                 <br />
-                                <span>
-                                    [ Data warehouse management. ]
-                                </span>
+                                [ Quality metrics management: JavaScript <div className="svg-social"></div> ]
                                 <br />
-                                <span>
-                                    [ SQL Server database support and maintenance on a regular basis. Building procedures, functions & table expressions; analyzing execution models. ]
-                                </span>
+                                [ Browser automations: Selenium <div className="svg-social"></div> ]
+                                <br />
+                                [ Data extraction: MongoDB <div className="svg-social"></div> aggregation pipelines ]
+                                <br />
+                                [ Visualizations and automations: Power BI <div className="svg-social"></div>, Power Automate <div className="svg-social"></div>, Power Query <div className="svg-social"></div>, SharePoint <div className="svg-social"></div> ]
+                                <br />
+                                [ Graphical representation: HTML <div className="svg-social"></div>/CSS <div className="svg-social"></div> ]
+                                <br />
+                                [ Multiple process automations: VBA <div className="svg-social"></div>, C# <div className="svg-social"></div>, JavaScript <div className="svg-social"></div> ]
                             </div>
                         </span>
 
