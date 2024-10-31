@@ -25,23 +25,21 @@ export default () => {
                                 I am a skilled data specialist with expertise in automation, data management, and visualization, leveraging a variety of tools and technologies:
                             </div>
                             <div className="details">
-                                [ Data collection: Advanced VBA <div className="svg-social"></div> ]
+                                [ Collection and extraction:  <div className="svg-social"></div> VBA, <div className="svg-social"></div> MongoDB aggregation pipelines ]
                                 <br />
-                                [ Data storage and management: SQL <div className="svg-social"></div>, T-SQL ]
+                                [ Storage and management: <div className="svg-social"></div> SQL, T-SQL ]
                                 <br />
-                                [ CSM/KSMs aggregation: Python <div className="svg-social"></div>, Pandas <div className="svg-social"></div>, NumPy <div className="svg-social"></div> ]
+                                [ Data aggregation: <div className="svg-social"></div> Python, <div className="svg-social"></div> Pandas, <div className="svg-social"></div> NumPy ]
                                 <br />
-                                [ Quality metrics management: JavaScript <div className="svg-social"></div> ]
+                                [ Quality management: <div className="svg-social"></div> JavaScript ]
                                 <br />
-                                [ Browser automations: Selenium <div className="svg-social"></div> ]
+                                [ Browser automations: <div className="svg-social"></div> Selenium ]
                                 <br />
-                                [ Data extraction: MongoDB <div className="svg-social"></div> aggregation pipelines ]
+                                [ Visualization and automations: <div className="svg-social"></div> Power BI, <div className="svg-social"></div> Power Automate, <div className="svg-social"></div> Power Query, <div className="svg-social"></div> SharePoint ]
                                 <br />
-                                [ Visualizations and automations: Power BI <div className="svg-social"></div>, Power Automate <div className="svg-social"></div>, Power Query <div className="svg-social"></div>, SharePoint <div className="svg-social"></div> ]
+                                [ Graphical representation: <div className="svg-social"></div>HTML/<div className="svg-social"></div>CSS ]
                                 <br />
-                                [ Graphical representation: HTML <div className="svg-social"></div>/CSS <div className="svg-social"></div> ]
-                                <br />
-                                [ Multiple process automations: VBA <div className="svg-social"></div>, C# <div className="svg-social"></div>, JavaScript <div className="svg-social"></div> ]
+                                [ Process automations: <div className="svg-social"></div> VBA, <div className="svg-social"></div> C#, <div className="svg-social"></div> JavaScript ]
                             </div>
                         </span>
 
