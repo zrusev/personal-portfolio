@@ -1,13 +1,25 @@
 import React, { Fragment } from 'react';
+import { useState, useEffect } from 'react';
 import NavigationLeft from '../../components/common/Navigation-left/Navigation-left';
 import NavigationRight from '../../components/common/Navigation-right/Navigation-right';
 import './experience.scss';
 
 export default () => {
+    const [hovered, setHovered] = useState(false);
+
+    useEffect (() => {
+        const timeoutId = setTimeout(() => {
+            setHovered(true);
+          }, 500);
+
+          return () => clearTimeout(timeoutId);
+    }, []);
+
+
     return (
         <Fragment>
             <NavigationLeft direction="education" />
-            <section className="section section-experience">
+            <section className="section section-experience" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
                 <header>
                     <h3>Work Experience</h3>
                 </header>
@@ -24,7 +36,7 @@ export default () => {
                                 <br />
                                 I am a skilled data specialist with expertise in automation, data management, and visualization, leveraging a variety of tools and technologies:
                             </div>
-                            <div className="details">
+                            <div className={hovered ? "details hovered" : "details"}>
                                 [ Collection and extraction:  <div className="svg-social"></div> VBA, <div className="svg-social"></div> MongoDB aggregation pipelines ]
                                 <br />
                                 [ Storage and management: <div className="svg-social"></div> SQL, T-SQL ]
@@ -52,31 +64,31 @@ export default () => {
                             </a>
                             <div className="position">Development Support Analyst</div>
                             <div className="position-description">
-                                Development Support Analyst of CoE Sofia works with business partners to support standard requests for design, develop and support a mission critical automation solutions.
+                                The Development Support Analyst at CoE Sofia collaborates with business partners to fulfill standard requests for design, development, and support of essential automation solutions.
                             </div>
-                            <div className="details">
+                            <div className={hovered ? "details hovered" : "details"}>
                                 <span>
-                                    [ Successfully developed and supported a data collection tool for gathering the basic KPIs within the center, data management and dashboard reporting. Reports across hi-level management are built up on the provided data. ]
+                                    [ Created and maintained a data collection tool to gather critical and key performance indicators. ]
                                 </span>
                                 <br />
                                 <span>
-                                    [ Successfully deployed and implemented the mentioned tool in Malaysia. ]
+                                    [ Deployed solutions across multiple sites. ]
                                 </span>
                                 <br />
                                 <span>
-                                    [ Successfully developed a career development framework designed for in-house career planning which facilitates the employee-team leader relationship in building the employee’s soft and technical skills. ]
+                                    [ Developed a career development framework to assist with in-house career planning, enhancing employee-team lead relationship and fostering both soft and technical skills. ]
                                 </span>
                                 <br />
                                 <span>
-                                    [ Successfully developed a self-sufficient robotic solution for data gathering which collects information for regular daily reporting needs. ]
+                                    [ Created an autonomous robotic solution for data collection, designed to meet daily reporting requirements. ]
                                 </span>
                                 <br />
                                 <span>
-                                    [ Successfully built a JavaScript based dashboard for fetching data without any deployed server using IE and ActiveX model; using several data visualization libraries. ]
+                                    [ Built a JavaScript dashboard for data visualization. ]
                                 </span>
                                 <br />
                                 <span>
-                                    [ Multiple process automations across the teams within the center, FTE savings and processes excellence. ]
+                                    [ Achieved multiple process automation initiatives across teams, leading to savings in full-time equivalent (FTE) resources and improved process efficiency. ]
                                 </span>
                             </div>
                         </span>
@@ -91,7 +103,7 @@ export default () => {
                             <div className="position-description">
                                 Reporting Administrator of CoE Sofia works with TPA reports and prepares necessary summaries.
                             </div>
-                            <div className="details">
+                            <div className={hovered ? "details hovered" : "details"}>
                                 <span>
                                     [ Retrieve the MI/KPI Report or Claims Loss Runs received from TPA via the outsourcing inbox or other mail address. This will have to be checked on a daily basis as the reports will come in on different dates. ]
                                 </span>
@@ -112,7 +124,7 @@ export default () => {
                             <div className="position-description">
                                 Operations Process Administrator with Spanish language of CoE Sofia performs different administrative functions and provides a package of ancillary and administrative services corresponding to the daily needs of those customers, arising in the context of their activities.
                             </div>
-                            <div className="details">
+                            <div className={hovered ? "details hovered" : "details"}>
                                 <span>
                                     [ Overally administer document flow associated with the processes administered, including preparing/drawing up documents, reading, editing, and proofreading of documents, processing, and archiving documents. ]
                                 </span>
